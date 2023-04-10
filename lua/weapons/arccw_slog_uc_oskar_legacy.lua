@@ -318,6 +318,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     end	
 end
 
+SWEP.Hook_Think = ArcCW.UC.ADSReload
 
 SWEP.Animations = {
     ["idle"] = {
