@@ -63,7 +63,7 @@ SWEP.MuzzleVelocity = 400
 
 -- Mag size --
 
-SWEP.ChamberSize = 1
+SWEP.chreleaseSize = 1
 SWEP.Primary.ClipSize = 20
 SWEP.ExtendedClipSize = 30
 SWEP.ReducedClipSize = 10
@@ -78,13 +78,13 @@ SWEP.RecoilPunch = 1
 SWEP.VisualRecoilMult = 1
 SWEP.MaxRecoilBlowback = 1
 SWEP.MaxRecoilPunch = 1
-SWEP.RecoilPunchBack = 1
+SWEP.RecoilPunchpull = 1
 
 SWEP.Sway = 0.5
 
 -- Firerate / Firemodes --
 
-SWEP.Delay = 60 / 700
+SWEP.Delay = 60 / 600
 SWEP.Num = 1
 SWEP.Firemodes = {
     {
@@ -143,8 +143,8 @@ SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.IronSightStruct = {
-     Pos = Vector(-3.52, 5, -0.341),
-     Ang = Angle(0.623, 0, -5),
+     Pos = Vector(-3.71, 3, 0.51),
+     Ang = Angle(0, 0, 0),
      Magnification = 1.1,
      SwitchToSound = "",
 }
@@ -169,13 +169,71 @@ SWEP.WorldModelOffset = {
 
 -- Firing sounds --
 
-local path = ")^weapons/arccw_ud/m16/"
-local common = ")^/arccw_uc/common/"
-SWEP.FirstShootSound = "weapons/uc_osk/fire.wav"
-SWEP.ShootSound = "weapons/uc_osk/fire.wav"
-SWEP.DistantShootSound = path .. "dist.ogg"
-SWEP.ShootSoundSilenced = path .. "fire_sup.ogg"
-SWEP.DistantShootSoundSilenced = path .. "fire_sup_dist.ogg"
+local path = ")weapons/uc_osk/"
+local common = ")/arccw_uc/common/"
+local rottle = {common .. "cloth_1.ogg", common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_5.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}
+local mech = {path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg"}
+local ratel = {common .. "rattle1.ogg", common .. "rattle2.ogg", common .. "rattle3.ogg"}
+local rutle = {common .. "movement-rifle-01.ogg", common .. "movement-rifle-02.ogg", common .. "movement-rifle-03.ogg", common .. "movement-rifle-04.ogg"}
+local magdrop = {common .. "rifle_magdrop_1.ogg", common .. "rifle_magdrop_2.ogg", common .. "rifle_magdrop_3.ogg", common .. "rifle_magdrop_4.ogg"}
+--SWEP.FirstShootSound = path .. "fire_first.ogg"
+
+SWEP.ShootSound = {
+    path .. "fire-01.ogg",
+    path .. "fire-02.ogg",
+    path .. "fire-03.ogg",
+    path .. "fire-04.ogg",
+    path .. "fire-05.ogg",
+    path .. "fire-06.ogg"
+}
+SWEP.ShootSoundSilenced = {
+    path .. "fire-sup-01.ogg",
+    path .. "fire-sup-02.ogg",
+    path .. "fire-sup-03.ogg",
+    path .. "fire-sup-04.ogg",
+    path .. "fire-sup-05.ogg",
+    path .. "fire-sup-06.ogg"
+}
+SWEP.DistantShootSound = nil
+SWEP.DistantShootSoundSilenced = nil
+SWEP.ShootDrySound = path .. "dryfire.ogg"
+
+local tail = ")/arccw_uc/common/308/"
+
+SWEP.DistantShootSoundOutdoors = {
+    tail .. "fire-dist-308-rif-ext-01.ogg",
+    tail .. "fire-dist-308-rif-ext-02.ogg",
+    tail .. "fire-dist-308-rif-ext-03.ogg",
+    tail .. "fire-dist-308-rif-ext-04.ogg",
+    tail .. "fire-dist-308-rif-ext-05.ogg",
+    tail .. "fire-dist-308-rif-ext-06.ogg"
+}
+SWEP.DistantShootSoundIndoors = {
+    tail .. "fire-dist-308-rif-int-01.ogg",
+    tail .. "fire-dist-308-rif-int-02.ogg",
+    tail .. "fire-dist-308-rif-int-03.ogg",
+    tail .. "fire-dist-308-rif-int-04.ogg",
+    tail .. "fire-dist-308-rif-int-05.ogg",
+    tail .. "fire-dist-308-rif-int-06.ogg"
+}
+SWEP.DistantShootSoundOutdoorsSilenced = {
+    common .. "sup-tail-01.ogg",
+    common .. "sup-tail-02.ogg",
+    common .. "sup-tail-03.ogg",
+    common .. "sup-tail-04.ogg",
+    common .. "sup-tail-05.ogg",
+    common .. "sup-tail-06.ogg",
+    common .. "sup-tail-07.ogg",
+    common .. "sup-tail-08.ogg",
+    common .. "sup-tail-09.ogg",
+    common .. "sup-tail-10.ogg"
+}
+SWEP.DistantShootSoundIndoorsSilenced = {
+    common .. "sup_tail.ogg"
+}
+SWEP.DistantShootSoundOutdoorsVolume = 1
+SWEP.DistantShootSoundIndoorsVolume = 1
+SWEP.Hook_AddShootSound = ArcCW.UC.InnyOuty
 
 -- Bodygroups --
 
@@ -274,9 +332,9 @@ SWEP.Animations = {
         SoundTable = {
             {s = common .. "raise.ogg", t = 0},
             {s = common .. "rattle.ogg", t = 0.2},
-            {s = path .. "chback.ogg",   t = 0.15},
+            {s = path .. "chpull.ogg",   t = 0.15},
             {s = common .. "cloth_4.ogg",  t = 0.5},
-            {s = path .. "chamber.ogg",  t = 0.5},
+            {s = path .. "chrelease.ogg",  t = 0.5},
         },
         ProcDraw = true,
     },	
@@ -328,21 +386,21 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "fire",
         ShellEjectAt = 0.01,
-        SoundTable = {
-            {s = path .. "mech.ogg", t = 0}, -- Temporary
-        },
+        SoundTable = {{ s = mech, t = 0, v = 0.25 }},
     },  
 	["fire_iron"] = {
         Source = "fire",
         ShellEjectAt = 0.01,
         SoundTable = {
-            {s = path .. "mech.ogg", t = 0}, -- Temporary
+            {s = common .. "common_mech_light.ogg", t = 0},
+            { s = mech, t = 0 }
         },
     },
     ["fire_empty"] = {
         Source = "fire_empty",
         ShellEjectAt = 0.01,
         SoundTable = {
+            {s = common .. "common_mech_light.ogg", t = 0},
             {s = path .. "mech_last.ogg", t = 0}, -- Temporary
         },
     }, 
@@ -350,6 +408,7 @@ SWEP.Animations = {
         Source = "fire_empty",
         ShellEjectAt = 0.01,
         SoundTable = {
+            {s = common .. "common_mech_light.ogg", t = 0},
             {s = path .. "mech_last.ogg", t = 0}, -- Temporary
         },
     },
@@ -367,10 +426,14 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.5,
         SoundTable = {
-            {s = "weapons/uc_osk/foley1.wav", 			t = 0/40},
-            {s = "weapons/uc_osk/out.wav", 			t = 10/40},
-            {s = "weapons/uc_osk/in.wav", 			t = 55/40},
-            {s = "weapons/uc_osk/bolt2.wav", 			t = 85/40},
+            {s = rottle, 			                    t = 0/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 10/40},
+            {s = rottle, 			                    t = 20/40},
+            {s = common .. "magpouch.ogg",              t = 32/40},
+            {s = "weapons/uc_osk/struggle.ogg", 		t = 42/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 56/40},
+            {s = rottle, 			                    t = 60/40},
+            {s = "weapons/uc_osk/magtap.ogg", 			t = 66/40},
         },
     },
     ["reload_empty"] = {
@@ -384,10 +447,12 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.5,
         SoundTable = {
-            {s = "weapons/uc_osk/foley1.wav", 			t = 0/40},
-            {s = "weapons/uc_osk/out.wav", 			t = 10/40},
-            {s = "weapons/uc_osk/in.wav", 			t = 55/40},
-            {s = "weapons/uc_osk/bolt2.wav", 			t = 85/40},
+            {s = rottle, 			t = 0/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 7/40},
+            {s = magdrop, 			t = 40/40, v = 0.25},
+            {s = "weapons/uc_osk/struggle.ogg", 		t = 46/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 62/40},
+            {s = "weapons/uc_osk/boltcatch.ogg", 		t = 82/40},
         },
     },
 
@@ -467,10 +532,10 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.5,
         SoundTable = {
-            {s = "weapons/uc_osk/foley1.wav", 			t = 0/40},
-            {s = "weapons/uc_osk/out.wav", 			t = 10/40},
-            {s = "weapons/uc_osk/in.wav", 			t = 55/40},
-            {s = "weapons/uc_osk/bolt2.wav", 			t = 85/40},
+            {s = rottle, 			t = 0/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 10/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 55/40},
+            {s = "weapons/uc_osk/boltcatch.ogg", 			t = 85/40},
         },
     },
     ["reload_empty_9mm"] = {
@@ -484,10 +549,10 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.5,
         SoundTable = {
-            {s = "weapons/uc_osk/foley1.wav", 			t = 0/40},
-            {s = "weapons/uc_osk/out.wav", 			t = 10/40},
-            {s = "weapons/uc_osk/in.wav", 			t = 55/40},
-            {s = "weapons/uc_osk/bolt2.wav", 			t = 85/40},
+            {s = rottle, 			t = 0/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 10/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 55/40},
+            {s = "weapons/uc_osk/boltcatch.ogg", 			t = 85/40},
         },
     },
 
@@ -567,10 +632,10 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.5,
         SoundTable = {
-            {s = "weapons/uc_osk/foley1.wav", 			t = 0/40},
-            {s = "weapons/uc_osk/out.wav", 			t = 10/40},
-            {s = "weapons/uc_osk/in.wav", 			t = 55/40},
-            {s = "weapons/uc_osk/bolt2.wav", 			t = 85/40},
+            {s = rottle, 			t = 0/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 10/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 55/40},
+            {s = "weapons/uc_osk/boltcatch.ogg", 			t = 85/40},
         },
     },
     ["reload_empty_ssr"] = {
@@ -584,10 +649,10 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.5,
         SoundTable = {
-            {s = "weapons/uc_osk/foley1.wav", 			t = 0/40},
-            {s = "weapons/uc_osk/out.wav", 			t = 10/40},
-            {s = "weapons/uc_osk/in.wav", 			t = 55/40},
-            {s = "weapons/uc_osk/bolt2.wav", 			t = 85/40},
+            {s = rottle, 			t = 0/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 10/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 55/40},
+            {s = "weapons/uc_osk/boltcatch.ogg", 			t = 85/40},
         },
     },
 
@@ -667,10 +732,10 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.5,
         SoundTable = {
-            {s = "weapons/uc_osk/foley1.wav", 			t = 0/40},
-            {s = "weapons/uc_osk/out.wav", 			t = 10/40},
-            {s = "weapons/uc_osk/in.wav", 			t = 55/40},
-            {s = "weapons/uc_osk/bolt2.wav", 			t = 85/40},
+            {s = rottle, 			t = 0/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 10/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 55/40},
+            {s = "weapons/uc_osk/boltcatch.ogg", 			t = 85/40},
         },
     },
     ["reload_empty_556"] = {
@@ -684,10 +749,10 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.5,
         SoundTable = {
-            {s = "weapons/uc_osk/foley1.wav", 			t = 0/40},
-            {s = "weapons/uc_osk/out.wav", 			t = 10/40},
-            {s = "weapons/uc_osk/in.wav", 			t = 55/40},
-            {s = "weapons/uc_osk/bolt2.wav", 			t = 85/40},
+            {s = rottle, 			t = 0/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 10/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 55/40},
+            {s = "weapons/uc_osk/boltcatch.ogg", 			t = 85/40},
         },
     },
 
@@ -767,10 +832,10 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.5,
         SoundTable = {
-            {s = "weapons/uc_osk/foley1.wav", 			t = 0/40},
-            {s = "weapons/uc_osk/out.wav", 			t = 10/40},
-            {s = "weapons/uc_osk/in.wav", 			t = 55/40},
-            {s = "weapons/uc_osk/bolt2.wav", 			t = 85/40},
+            {s = rottle, 			t = 0/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 10/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 55/40},
+            {s = "weapons/uc_osk/boltcatch.ogg", 			t = 85/40},
         },
     },
     ["reload_empty_ak"] = {
@@ -784,10 +849,10 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.5,
         SoundTable = {
-            {s = "weapons/uc_osk/foley1.wav", 			t = 0/40},
-            {s = "weapons/uc_osk/out.wav", 			t = 10/40},
-            {s = "weapons/uc_osk/in.wav", 			t = 55/40},
-            {s = "weapons/uc_osk/bolt2.wav", 			t = 85/40},
+            {s = rottle, 			t = 0/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 10/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 55/40},
+            {s = "weapons/uc_osk/boltcatch.ogg", 			t = 85/40},
         },
     },
 
@@ -859,11 +924,11 @@ SWEP.Attachments = {
     {
         PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        InstalledEles = {"upper_flat"},
+        --InstalledEles = {"upper_flat"}, no such thing
         Slot = {"optic","sniper_optic"},
         Bone = "W_Main",
         Offset = {
-            vpos = Vector(0, -4.9, 0),
+            vpos = Vector(0, -3.75, 0.5),
             vang = Angle(90, 0, -90),
         },
         VMScale = Vector(1.3, 1.3, 1.3),
@@ -894,7 +959,7 @@ SWEP.Attachments = {
         Slot = {"foregrip","ubgl"},
         Bone = "W_Main",
         Offset = {
-            vpos = Vector(0, -1.75, 9),
+            vpos = Vector(0, -0.9, 9),
             vang = Angle(90, 0, -90),
         },
         ExcludeFlags = {"blast"},
