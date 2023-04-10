@@ -241,6 +241,13 @@ SWEP.AttachmentElements = {
         AttPosMods = {[3] = {vpos = Vector(0, -2.95, 12)},
         }
     },	
+	["stock_ssr"] = { VMBodygroups = { {ind = 7, bg = 6}, }, },
+	["stock_pdw"] = { VMBodygroups = { {ind = 7, bg = 4}, }, },
+	["stock_fold"] = { VMBodygroups = { {ind = 7, bg = 2}, }, },
+	["hg_l"] = { VMBodygroups = { {ind = 8, bg = 3}, {ind = 9, bg = 3}, }, },
+	["hg_sd"] = { VMBodygroups = { {ind = 8, bg = 4}, {ind = 9, bg = 4},	{ind = 5, bg = 2}, {ind = 1, bg = 3}, }, },
+	["hg_s"] = { VMBodygroups = { {ind = 8, bg = 1}, {ind = 9, bg = 1},		{ind = 5, bg = 2}, {ind = 1, bg = 1}, }, },
+	["hg_xs"] = { VMBodygroups = { {ind = 8, bg = 2}, {ind = 9, bg = 2},	{ind = 5, bg = 4}, {ind = 1, bg = 2}, }, },
 }
 
 SWEP.DefaultBodygroups = "000000000000000"
@@ -862,9 +869,9 @@ SWEP.Attachments = {
         VMScale = Vector(1.3, 1.3, 1.3),
     },
     {
-        PrintName = "Kit",
-        DefaultAttName = "Standard Kit",
-        Slot = "uc_osk_kit",
+        PrintName = "Handguard",
+        DefaultAttName = "Standard Handguard",
+        Slot = "uc_myt_scar_hg",
         Bone = "W_Main",
         Offset = {
             vpos = Vector(3.5, -4.25, -7),
@@ -905,7 +912,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Stock",
-        Slot = {"uc_osk_stock"},
+        Slot = {"uc_myt_scar_stock"},
         DefaultAttName = "Full Stock",
     },
     {

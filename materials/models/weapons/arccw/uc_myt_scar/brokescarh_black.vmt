@@ -6,6 +6,7 @@
      "$envmaptint" "[0.1 0.1 0.1]"
      "$normalmapalphaenvmapmask" 1
      "$envmapfresnel" "0.7"
+	 "$color2"						"[0.6 0.6 0.6]"
 
      "$phong" 1
 
