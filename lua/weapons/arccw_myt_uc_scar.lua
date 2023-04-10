@@ -447,12 +447,16 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.5,
         SoundTable = {
-            {s = rottle, 			t = 0/40},
+            {s = rottle, 			                    t = 0/40},
             {s = "weapons/uc_osk/magout.ogg", 			t = 7/40},
-            {s = magdrop, 			t = 40/40, v = 0.25},
+            {s = rottle, 			                    t = 17/40},
+            {s = magdrop, 			                    t = 40/40, v = 0.25},
+            {s = common .. "magpouch.ogg",              t = 32/40},
             {s = "weapons/uc_osk/struggle.ogg", 		t = 46/40},
             {s = "weapons/uc_osk/magin.ogg", 			t = 62/40},
+            {s = rottle, 			                    t = 69/40},
             {s = "weapons/uc_osk/boltcatch.ogg", 		t = 82/40},
+            {s = rottle, 			                    t = 88/40},
         },
     },
 
