@@ -1,6 +1,7 @@
 SWEP.Base = "arccw_base"
 SWEP.Spawnable = true
 SWEP.Category = "ArcCW - Urban Coalition"
+SWEP.UC_CategoryPack = "5Urban One-offs"
 SWEP.AdminOnly = false
 SWEP.UseHands = true
 
@@ -20,9 +21,9 @@ SWEP.TracerWidth = 2
 
 -- Fake name --
 
-SWEP.PrintName = "Oskar-21"
+SWEP.PrintName = "Oskar-21 (Do Not)"
 -- True name --
-SWEP.TrueName = "MK-17"
+SWEP.TrueName = "MK-17 (Do Not)"
 
 -- Trivia --
 
