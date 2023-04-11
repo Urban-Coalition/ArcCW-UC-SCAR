@@ -934,7 +934,7 @@ SWEP.Attachments = {
         Slot = {"muzzle"},
         Bone = "W_Main",
         Offset = {
-            vpos = Vector(0, -2.95, 18),
+            vpos = Vector(0, -1.65, 15.5),
             vang = Angle(90, 0, -90),
         },
         ExcludeFlags = {"sd"},
@@ -954,8 +954,8 @@ SWEP.Attachments = {
         Slot = {"tac"},
         Bone = "W_Main",
         Offset = {
-            vpos = Vector(0, -2, 11.5),
-            vang = Angle(90, 0, -90),
+            vpos = Vector(0.1, -3.6, 9),
+            vang = Angle(90, 0, 90),
         },
         GivesFlags = {"tac"},
         --InstalledEles = {"ud_m16_clamp_fullsize"}
