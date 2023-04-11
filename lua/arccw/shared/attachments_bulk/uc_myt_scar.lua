@@ -12,12 +12,37 @@ att.Desc_Cons = {}
 att.Desc_Neutrals = {}
 att.Slot = "uc_myt_scar_mag"
 
+att.Mult_RPM = 1.25 -- 650 rpm
+
 att.AutoStats = true
 att.HideIfBlocked = true
 
 att.Override_ClipSize = 25
 
 att.ActivateElements = {"conv_9mm"}
+
+local path = ")weapons/uc_osk/"
+local common = ")/arccw_uc/common/"
+local tail9 = ")/arccw_uc/common/9x19/"
+local fire9dist = {tail9 .. "fire-dist-9x19-pistol-ext-01.ogg", tail9 .. "fire-dist-9x19-pistol-ext-02.ogg", tail9 .. "fire-dist-9x19-pistol-ext-03.ogg", tail9 .. "fire-dist-9x19-pistol-ext-04.ogg", tail9 .. "fire-dist-9x19-pistol-ext-05.ogg", tail9 .. "fire-dist-9x19-pistol-ext-06.ogg"}
+local fire9 = {path .. "fire-9-01.ogg", path .. "fire-9-02.ogg", path .. "fire-9-03.ogg", path .. "fire-9-04.ogg", path .. "fire-9-05.ogg", path .. "fire-9-06.ogg"}
+local fire9supp = {path .. "fire-9-sup-01.ogg", path .. "fire-9-sup-02.ogg", path .. "fire-9-sup-03.ogg", path .. "fire-9-sup-04.ogg", path .. "fire-9-sup-05.ogg", path .. "fire-9-sup-06.ogg"}
+
+att.Hook_GetShootSound = function(wep, fsound)
+    if wep:GetBuff_Override("Silencer") then
+        return fire9supp
+    else
+        return fire9
+    end
+end
+
+att.Hook_GetDistantShootSoundOutdoors = function(wep, distancesound)
+    if wep:GetBuff_Override("Silencer") then
+        -- fallback to script
+    else
+        return fire9dist
+    end
+end
 
 att.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_9mm"
@@ -43,6 +68,27 @@ att.Override_ClipSize = 32
 
 att.ActivateElements = {"conv_ak"}
 
+local tail762 = ")/arccw_uc/common/762x39/"
+local fire762dist = {tail762 .. "fire-dist-762x39-rif-ext-01.ogg", tail762 .. "fire-dist-762x39-rif-ext-02.ogg", tail762 .. "fire-dist-762x39-rif-ext-03.ogg", tail762 .. "fire-dist-762x39-rif-ext-04.ogg", tail762 .. "fire-dist-762x39-rif-ext-05.ogg", tail762 .. "fire-dist-762x39-rif-ext-06.ogg"}
+local fire762 = {path .. "fire-762-01.ogg", path .. "fire-762-02.ogg", path .. "fire-762-03.ogg", path .. "fire-762-04.ogg", path .. "fire-762-05.ogg", path .. "fire-762-06.ogg"}
+local fire762supp = {path .. "fire-762-sup-01.ogg", path .. "fire-762-sup-02.ogg", path .. "fire-762-sup-03.ogg", path .. "fire-762-sup-04.ogg", path .. "fire-762-sup-05.ogg", path .. "fire-762-sup-06.ogg"}
+
+att.Hook_GetShootSound = function(wep, fsound)
+    if wep:GetBuff_Override("Silencer") then
+        return fire762supp
+    else
+        return fire762
+    end
+end
+
+att.Hook_GetDistantShootSoundOutdoors = function(wep, distancesound)
+    if wep:GetBuff_Override("Silencer") then
+        -- fallback to script
+    else
+        return fire762dist
+    end
+end
+
 att.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_ak"
 end
@@ -60,12 +106,35 @@ att.Desc_Cons = {}
 att.Desc_Neutrals = {}
 att.Slot = "uc_myt_scar_mag"
 
+att.Mult_RPM = 1.083 -- 650 rpm
+
 att.AutoStats = true
 att.HideIfBlocked = true
 
 att.Override_ClipSize = 30
 
 att.ActivateElements = {"conv_556"}
+
+local tail556 = ")/arccw_uc/common/556x45/"
+local fire556dist = {tail556 .. "fire-dist-556x45-rif-ext-01.ogg", tail556 .. "fire-dist-556x45-rif-ext-02.ogg", tail556 .. "fire-dist-556x45-rif-ext-03.ogg", tail556 .. "fire-dist-556x45-rif-ext-04.ogg", tail556 .. "fire-dist-556x45-rif-ext-05.ogg", tail556 .. "fire-dist-556x45-rif-ext-06.ogg"}
+local fire556 = {path .. "fire-556-01.ogg", path .. "fire-556-02.ogg", path .. "fire-556-03.ogg", path .. "fire-556-04.ogg", path .. "fire-556-05.ogg", path .. "fire-556-06.ogg"}
+local fire556supp = {path .. "fire-556-sup-01.ogg", path .. "fire-556-sup-02.ogg", path .. "fire-556-sup-03.ogg", path .. "fire-556-sup-04.ogg", path .. "fire-556-sup-05.ogg", path .. "fire-556-sup-06.ogg"}
+
+att.Hook_GetShootSound = function(wep, fsound)
+    if wep:GetBuff_Override("Silencer") then
+        return fire556supp
+    else
+        return fire556
+    end
+end
+
+att.Hook_GetDistantShootSoundOutdoors = function(wep, distancesound)
+    if wep:GetBuff_Override("Silencer") then
+        -- fallback to script
+    else
+        return fire556dist
+    end
+end
 
 att.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_556"
@@ -75,7 +144,7 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_cal_556")
 
 local att = {}
 
-att.PrintName = "10-Round 7.62 SPP"
+att.PrintName = "10-Round .308 SPP"
 
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
 att.Description = ""
