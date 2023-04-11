@@ -303,16 +303,27 @@ SWEP.AttachmentElements = {
 	["stock_pdw"] = { VMBodygroups = { {ind = 7, bg = 4}, }, },
 	["stock_fold"] = { VMBodygroups = { {ind = 7, bg = 2}, }, },
 	["hg_l"] = { VMBodygroups = { {ind = 8, bg = 3}, {ind = 9, bg = 3}, }, },
-	["hg_sd"] = { VMBodygroups = { {ind = 8, bg = 4}, {ind = 9, bg = 4},	{ind = 5, bg = 2}, {ind = 1, bg = 3}, }, },
-	["hg_s"] = { VMBodygroups = { {ind = 8, bg = 1}, {ind = 9, bg = 1},		{ind = 5, bg = 2}, {ind = 1, bg = 1}, }, },
-	["hg_xs"] = { VMBodygroups = { {ind = 8, bg = 2}, {ind = 9, bg = 2},	{ind = 5, bg = 4}, {ind = 1, bg = 2}, }, },
+	["hg_sd"] = { VMBodygroups = { {ind = 8, bg = 4}, {ind = 9, bg = 4},	{ind = 1, bg = 3}, }, },
+	["hg_s"] = { VMBodygroups = { {ind = 8, bg = 1}, {ind = 9, bg = 1},		{ind = 1, bg = 1}, }, },
+	["hg_xs"] = { VMBodygroups = { {ind = 8, bg = 2}, {ind = 9, bg = 2},	{ind = 1, bg = 2}, }, },
 }
 
 SWEP.DefaultBodygroups = "000000000000000"
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local vm = data.vm
-    if wep.Attachments[1].Installed then vm:SetBodygroup(5, 1) end
+    local handguard = wep.Attachments[2].Installed
+    if wep.Attachments[1].Installed then 
+        if handguard == "uc_myt_scar_hg_s" then vm:SetBodygroup(5, 3) 
+        elseif handguard == "uc_myt_scar_hg_xs" then vm:SetBodygroup(5, 5)
+        else   vm:SetBodygroup(5, 1) end
+    
+    else
+        if handguard == "uc_myt_scar_hg_s" then vm:SetBodygroup(5, 2) 
+        elseif handguard == "uc_myt_scar_hg_xs" then vm:SetBodygroup(5, 4)
+        else   vm:SetBodygroup(5, 0) end
+    
+    end
 end
 
 SWEP.NoHideLeftHandInCustomization = true
