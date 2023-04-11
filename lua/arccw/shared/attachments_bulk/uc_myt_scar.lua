@@ -336,7 +336,11 @@ att.Slot = "uc_myt_scar_hg"
 att.AutoStats = true
 att.SortOrder = 4
 
+att.Silencer = true
+att.Override_MuzzleEffect = "muzzleflash_suppressed"
+
 att.Add_BarrelLength = 4
 
 att.ActivateElements = {"hg_sd"}
+att.GivesFlags = {"sd"}
 ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_sd")

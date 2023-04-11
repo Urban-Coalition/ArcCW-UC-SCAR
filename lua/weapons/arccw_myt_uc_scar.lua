@@ -281,8 +281,6 @@ SWEP.AttachmentElements = {
             Ang = Angle(0.64, 0, -5),
             Magnification = 1.1
         },]]
-        AttPosMods = {[3] = {vpos = Vector(0, -2.95, 12)},
-        }
     },	
 	["conv_ssr"] = {
         NameChange = "Lancierie 24",
@@ -296,16 +294,18 @@ SWEP.AttachmentElements = {
             Ang = Angle(0.64, 0, -5),
             Magnification = 1.1
         },]]
-        AttPosMods = {[3] = {vpos = Vector(0, -2.95, 12)},
-        }
     },	
 	["stock_ssr"] = { VMBodygroups = { {ind = 7, bg = 6}, }, },
 	["stock_pdw"] = { VMBodygroups = { {ind = 7, bg = 4}, }, },
 	["stock_fold"] = { VMBodygroups = { {ind = 7, bg = 2}, }, },
-	["hg_l"] = { VMBodygroups = { {ind = 8, bg = 3}, {ind = 9, bg = 3}, }, },
-	["hg_sd"] = { VMBodygroups = { {ind = 8, bg = 4}, {ind = 9, bg = 4},	{ind = 1, bg = 3}, }, },
-	["hg_s"] = { VMBodygroups = { {ind = 8, bg = 1}, {ind = 9, bg = 1},		{ind = 1, bg = 1}, }, },
-	["hg_xs"] = { VMBodygroups = { {ind = 8, bg = 2}, {ind = 9, bg = 2},	{ind = 1, bg = 2}, }, },
+	["hg_l"] = { VMBodygroups = { {ind = 8, bg = 3}, {ind = 9, bg = 3}, }, 
+                 AttPosMods = {[3] = {vpos = Vector(0, -1.65, 21.5)},}},
+	["hg_sd"] = { VMBodygroups = { {ind = 8, bg = 4}, {ind = 9, bg = 4},	{ind = 1, bg = 3}, }, 
+                 AttPosMods = {[3] = {vpos = Vector(0, -1.65, 15.5)}, [4] = {vpos = Vector(0, 0, 9)}, [5] = {vpos = Vector(-1.5, -1.7, 9.5)},}},
+	["hg_s"] = { VMBodygroups = { {ind = 8, bg = 1}, {ind = 9, bg = 1},		{ind = 1, bg = 1}, }, 
+                 AttPosMods = {[3] = {vpos = Vector(0, -1.65, 12.9)}, [4] = {vpos = Vector(0, -0.75, 7.5)}, [5] = {vpos = Vector(-1, -1.7, 8.5)},}},
+	["hg_xs"] = { VMBodygroups = { {ind = 8, bg = 2}, {ind = 9, bg = 2},	{ind = 1, bg = 2}, }, 
+                  AttPosMods = {[3] = {vpos = Vector(0, -1.65, 10.8)}, [4] = {vpos = Vector(0, -0.75, 7)}, [5] = {vpos = Vector(-1, -1.7, 7.5)},}},
 }
 
 SWEP.DefaultBodygroups = "000000000000000"
@@ -965,8 +965,8 @@ SWEP.Attachments = {
         Slot = {"tac"},
         Bone = "W_Main",
         Offset = {
-            vpos = Vector(0.1, -3.6, 9),
-            vang = Angle(90, 0, 90),
+            vpos = Vector(-1, -1.7, 9.5),
+            vang = Angle(90, 0, 180),
         },
         GivesFlags = {"tac"},
         --InstalledEles = {"ud_m16_clamp_fullsize"}
