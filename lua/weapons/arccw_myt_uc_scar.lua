@@ -251,8 +251,6 @@ SWEP.AttachmentElements = {
             Ang = Angle(0.64, 0, -5),
             Magnification = 1.1
         },]]
-        AttPosMods = {[3] = {vpos = Vector(0, -2.95, 12)},
-        }
     },	 
 	["conv_ak"] = {
         NameChange = "Chijmaar 32",
