@@ -314,12 +314,12 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     local vm = data.vm
     local handguard = wep.Attachments[2].Installed
     if wep.Attachments[1].Installed then 
-        if handguard == "uc_myt_scar_hg_s" then vm:SetBodygroup(5, 3) 
+        if (handguard == "uc_myt_scar_hg_s") || (handguard == "uc_myt_scar_hg_sd") then vm:SetBodygroup(5, 3) 
         elseif handguard == "uc_myt_scar_hg_xs" then vm:SetBodygroup(5, 5)
         else   vm:SetBodygroup(5, 1) end
     
     else
-        if handguard == "uc_myt_scar_hg_s" then vm:SetBodygroup(5, 2) 
+        if (handguard == "uc_myt_scar_hg_s") || (handguard == "uc_myt_scar_hg_sd") then vm:SetBodygroup(5, 2) 
         elseif handguard == "uc_myt_scar_hg_xs" then vm:SetBodygroup(5, 4)
         else   vm:SetBodygroup(5, 0) end
     
