@@ -57,6 +57,7 @@ att.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_9mm"
 end
 
+att.Ignore = true
 ArcCW.LoadAttachmentType(att, "uc_myt_scar_cal_9mm")
 
 local att = {}
