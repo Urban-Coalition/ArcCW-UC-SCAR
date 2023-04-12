@@ -23,15 +23,16 @@ SWEP.TracerWidth = 2
 
 SWEP.PrintName = "Osckée 21"
 -- True name --
-SWEP.TrueName = "MK17"
+SWEP.TrueName = "SCAR-H"
 
 -- Trivia --
 
 SWEP.Trivia_Class = "Battle Rifle"
-SWEP.Trivia_Desc = "Heavy hitting assault rifle. Versitile and compact."
-SWEP.Trivia_Calibre = ".308 NATO"
+SWEP.Trivia_Desc = [[The Special Operations Forces Combat Assault Rifle, a highly modular rifle platform designed to specifications of the United States' SOCOM division. Configurable for close combat, marksmanship, and more.]]
+SWEP.Trivia_Calibre = "7.62x51mm NATO"
 SWEP.Trivia_Country = "Belgium"
-SWEP.Trivia_Year = 2006
+SWEP.Trivia_Manufacturer = "FN Herstal"
+SWEP.Trivia_Year = 2004
 
 -- Weapon slot --
 
@@ -119,7 +120,7 @@ SWEP.HipDispersion = 750
 SWEP.MoveDispersion = 220
 SWEP.JumpDispersion = 1000
 
-SWEP.Primary.Ammo = "smg1"
+SWEP.Primary.Ammo = "ar2"
 
 -- Speed multipliers --
 
@@ -269,7 +270,7 @@ SWEP.AttachmentElements = {
     },
 	["conv_556"] = {
         NameChange = "Scarlett 17",
-        TrueNameChange = "MK-17",
+        TrueNameChange = "SCAR-L",
         VMBodygroups = {
             {ind = 2, bg = 1},
             {ind = 4, bg = 1},
@@ -492,10 +493,13 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.475,
         SoundTable = {
-            {s = common .. "movement-rifle-04.ogg", t = 0.2},
-            {s = rottle, t = 0.25},
-            {s = rottle, t = 1.2},
-            {s = common .. "movement-rifle-03.ogg", t = 1.25},
+            {s = rottle, 			                    t = 0/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 20/40},
+            {s = rottle, 			                    t = 17/40},
+            {s = "weapons/uc_osk/struggle.ogg", 		t = 60/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 70/40},
+            {s = rottle, 			                    t = 69/40},
+            {s = common .. "shoulder.ogg", 	        	t = 88/40, v = .5},
         },
     },
     ["enter_inspect_empty"] = {
@@ -521,10 +525,13 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.475,
         SoundTable = {
-            {s = common .. "movement-rifle-04.ogg", t = 0.2},
-            {s = rottle, t = 0.25},
-            {s = rottle, t = 1.2},
-            {s = common .. "movement-rifle-03.ogg", t = 1.25},
+            {s = rottle, 			                    t = 0/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 20/40},
+            {s = rottle, 			                    t = 17/40},
+            {s = "weapons/uc_osk/struggle.ogg", 		t = 60/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 70/40},
+            {s = rottle, 			                    t = 69/40},
+            {s = common .. "shoulder.ogg", 	        	t = 88/40, v = .5},
         },
     },	
 
@@ -702,15 +709,12 @@ SWEP.Animations = {
         LHIKOut = 0.475,
         SoundTable = {
             {s = rottle, 			                    t = 0/40},
-            {s = "weapons/uc_osk/magout.ogg", 			t = 7/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 20/40},
             {s = rottle, 			                    t = 17/40},
-            {s = magdrop, 			                    t = 40/40, v = 0.25},
-            {s = common .. "magpouch.ogg",              t = 32/40},
             {s = "weapons/uc_osk/struggle.ogg", 		t = 46/40},
-            {s = "weapons/uc_osk/magin.ogg", 			t = 62/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 70/40},
             {s = rottle, 			                    t = 69/40},
-            {s = "weapons/uc_osk/boltcatch.ogg", 		t = 82/40},
-            {s = rottle, 			                    t = 88/40},
+            -- {s = "weapons/uc_osk/boltcatch.ogg", 		t = 82/40},
         },
     },
     ["enter_inspect_empty_ssr"] = {
@@ -736,10 +740,13 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.475,
         SoundTable = {
-            {s = common .. "movement-rifle-04.ogg", t = 0.2},
-            {s = rottle, t = 0.25},
-            {s = rottle, t = 1.2},
-            {s = common .. "movement-rifle-03.ogg", t = 1.25},
+            {s = rottle, 			                    t = 0/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 20/40},
+            {s = rottle, 			                    t = 17/40},
+            {s = "weapons/uc_osk/struggle.ogg", 		t = 60/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 70/40},
+            {s = rottle, 			                    t = 69/40},
+            {s = common .. "shoulder.ogg", 	        	t = 88/40, v = .5},
         },
     },	 
 
@@ -812,10 +819,13 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.475,
         SoundTable = {
-            {s = common .. "movement-rifle-04.ogg", t = 0.2},
-            {s = rottle, t = 0.25},
-            {s = rottle, t = 1.2},
-            {s = common .. "movement-rifle-03.ogg", t = 1.25},
+            {s = rottle, 			                    t = 0/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 20/40},
+            {s = rottle, 			                    t = 17/40},
+            {s = "weapons/uc_osk/struggle.ogg", 		t = 60/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 70/40},
+            {s = rottle, 			                    t = 69/40},
+            {s = common .. "shoulder.ogg", 	        	t = 88/40, v = .5},
         },
     },
     ["enter_inspect_empty_556"] = {
@@ -841,10 +851,13 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.475,
         SoundTable = {
-            {s = common .. "movement-rifle-04.ogg", t = 0.2},
-            {s = rottle, t = 0.25},
-            {s = rottle, t = 1.2},
-            {s = common .. "movement-rifle-03.ogg", t = 1.25},
+            {s = rottle, 			                    t = 0/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 20/40},
+            {s = rottle, 			                    t = 17/40},
+            {s = "weapons/uc_osk/struggle.ogg", 		t = 60/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 70/40},
+            {s = rottle, 			                    t = 69/40},
+            {s = common .. "shoulder.ogg", 	        	t = 88/40, v = .5},
         },
     },	 
 
@@ -917,10 +930,13 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.475,
         SoundTable = {
-            {s = common .. "movement-rifle-04.ogg", t = 0.2},
-            {s = rottle, t = 0.25},
-            {s = rottle, t = 1.2},
-            {s = common .. "movement-rifle-03.ogg", t = 1.25},
+            {s = rottle, 			                    t = 0/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 20/40},
+            {s = rottle, 			                    t = 17/40},
+            {s = "weapons/uc_osk/struggle.ogg", 		t = 60/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 70/40},
+            {s = rottle, 			                    t = 69/40},
+            {s = common .. "shoulder.ogg", 	        	t = 88/40, v = .5},
         },
     },
     ["enter_inspect_empty_ak"] = {
@@ -946,10 +962,13 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.475,
         SoundTable = {
-            {s = common .. "movement-rifle-04.ogg", t = 0.2},
-            {s = rottle, t = 0.25},
-            {s = rottle, t = 1.2},
-            {s = common .. "movement-rifle-03.ogg", t = 1.25},
+            {s = rottle, 			                    t = 0/40},
+            {s = "weapons/uc_osk/magout.ogg", 			t = 20/40},
+            {s = rottle, 			                    t = 17/40},
+            {s = "weapons/uc_osk/struggle.ogg", 		t = 60/40},
+            {s = "weapons/uc_osk/magin.ogg", 			t = 70/40},
+            {s = rottle, 			                    t = 69/40},
+            {s = common .. "shoulder.ogg", 	        	t = 88/40, v = .5},
         },
     },	
 }
