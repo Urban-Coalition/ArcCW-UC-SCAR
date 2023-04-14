@@ -53,8 +53,8 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 
 -- Damage --
 
-SWEP.Damage = 47 
-SWEP.DamageMin = 32
+SWEP.Damage = 65 
+SWEP.DamageMin = 35
 SWEP.RangeMin = 20
 SWEP.Range = 200
 SWEP.Penetration = 18
