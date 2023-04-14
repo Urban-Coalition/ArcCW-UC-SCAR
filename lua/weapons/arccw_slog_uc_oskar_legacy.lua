@@ -1,5 +1,5 @@
 SWEP.Base = "arccw_base"
-SWEP.Spawnable = true
+SWEP.Spawnable = false
 SWEP.Category = "ArcCW - Urban Coalition"
 SWEP.UC_CategoryPack = "5Urban One-offs"
 SWEP.AdminOnly = false
