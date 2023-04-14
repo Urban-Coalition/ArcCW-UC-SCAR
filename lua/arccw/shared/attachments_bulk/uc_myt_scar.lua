@@ -115,21 +115,42 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_cal_762")
 
 local att = {}
 
-att.PrintName = "30-Round 5.56"
+att.PrintName = "SCAR-L 30-Round STANAG Mag"
+att.AbbrevName = "30-Round 5.56 Mag"
+
 
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
-att.Description = ""
+att.Description = "Barrel group that accepts an intermediate cartridge, changing the weapon into an assault rifle."
 att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
 att.Slot = "uc_myt_scar_mag"
 
+att.Override_Ammo = "smg1"
+att.Override_Trivia_Calibre = "5.56x45mm NATO"
+att.Override_Trivia_Class = "Assault Rifle"
+
 att.Mult_RPM = 1.083 -- 650 rpm
+att.Mult_SightedSpeedMult = 1.05
+att.Mult_ReloadTime = .95
+att.Mult_Recoil = 0.45
+att.Mult_HipDispersion = .75
+
+att.Mult_Penetration = 14 / 20
+att.Mult_DamageMin = 20 / 35
+att.Mult_Damage = 34 / 65
+att.ShootPitchVariation = 1
+att.Override_ShellModel = "models/weapons/arccw/uc_shells/556x45.mdl"
+att.Override_ShellScale = 1
+
+att.GivesFlags = {"cal_556"}
 
 att.AutoStats = true
 att.HideIfBlocked = true
 
 att.Override_ClipSize = 30
+
+
 
 att.ActivateElements = {"conv_556"}
 
@@ -171,7 +192,8 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_cal_556")
 
 local att = {}
 
-att.PrintName = "10-Round .308 SPP"
+att.PrintName = "SCAR-H 10-Round Reduced Mag"
+att.AbbrevName = "10-Round Reduced Mag"
 
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
 att.Description = ""
@@ -179,11 +201,12 @@ att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
 att.Slot = "uc_myt_scar_mag"
+att.SortOrder = 10
 
 att.AutoStats = true
 att.HideIfBlocked = true
 
-att.Override_ClipSize = 30
+att.Override_ClipSize = 10
 
 att.ActivateElements = {"conv_ssr"}
 
