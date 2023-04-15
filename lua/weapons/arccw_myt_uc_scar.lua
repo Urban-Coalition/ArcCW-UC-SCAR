@@ -575,7 +575,7 @@ SWEP.Animations = {
             {s = common .. "magpouch.ogg",              t = 32/40},
             {s = "weapons/uc_osk/struggle-9.ogg", 		t = 35/40},
             {s = "weapons/uc_osk/magin-9.ogg", 			t = 41/40},
-            {s = "weapons/uc_osk/boltcatchpress.ogg", 	t = 58/40},
+            {s = "weapons/uc_osk/boltcatchpress-9.ogg", t = 58/40},
             {s = rottle, 			                    t = 62/40},
         },
     },
