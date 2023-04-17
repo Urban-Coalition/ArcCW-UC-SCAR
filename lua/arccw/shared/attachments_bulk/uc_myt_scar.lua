@@ -63,10 +63,10 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_cal_9mm")
 
 local att = {}
 
-att.PrintName = "32-Round 7.62"
+att.PrintName = "30-Round 7.62 Mag"
 
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
-att.Description = ""
+att.Description = "Prototype assault rifle conversion that retains more stopping power relative to .308 than the more common SCAR-L."
 att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
@@ -75,7 +75,7 @@ att.Slot = "uc_myt_scar_mag"
 att.AutoStats = true
 att.HideIfBlocked = true
 
-att.Override_ClipSize = 32
+att.Override_ClipSize = 30
 
 att.Mult_Recoil = .7
 att.Mult_Damage = 50 / 65
