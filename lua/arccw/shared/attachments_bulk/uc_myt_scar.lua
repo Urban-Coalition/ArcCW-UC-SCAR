@@ -3,6 +3,8 @@
 
 local att = {}
 
+
+-- Magazines/Caliber Conversions ---------------------------------------------------------
 att.PrintName = "25-Round 9mm"
 
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
@@ -75,6 +77,10 @@ att.HideIfBlocked = true
 
 att.Override_ClipSize = 32
 
+att.Mult_Recoil = .7
+att.Mult_Damage = 50 / 65
+att.Mult_DamageMin = 25 / 35
+
 att.ActivateElements = {"conv_ak"}
 
 local tail762 = ")/arccw_uc/common/762x39/"
@@ -120,7 +126,7 @@ att.AbbrevName = "30-Round 5.56 Mag"
 
 
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
-att.Description = "Barrel group that accepts an intermediate cartridge, changing the weapon into an assault rifle."
+att.Description = "Barrel and receiver group that accepts an intermediate cartridge, changing the weapon into an assault rifle."
 att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
@@ -218,7 +224,7 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_cal_ssr")
 
 
 
-
+-- Stocks ---------------------------------------------------------
 local att = {}
 
 att.PrintName = "Marksman Stock"
@@ -307,7 +313,8 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_stock_fold")
 
 local att = {}
 
-att.PrintName = "Long Handguard"
+-- Barrels ---------------------------------------------------------
+att.PrintName = "20\" LB Barrel"
 att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
 att.Description = "Rail."
 att.Desc_Pros = {
@@ -319,16 +326,16 @@ att.Desc_Neutrals = {
 att.Slot = "uc_myt_scar_hg"
 
 att.AutoStats = true
-att.SortOrder = 4
+att.SortOrder = 20
 
-att.Add_BarrelLength = 4
+att.Add_BarrelLength = 5
 
 att.ActivateElements = {"hg_l"}
 ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_l")
 
 local att = {}
 
-att.PrintName = "Compact Handguard"
+att.PrintName = "10\" CQC Barrel"
 att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
 att.Description = "Guh?"
 att.Desc_Pros = {
@@ -340,16 +347,16 @@ att.Desc_Neutrals = {
 att.Slot = "uc_myt_scar_hg"
 
 att.AutoStats = true
-att.SortOrder = 4
+att.SortOrder = 10
 
-att.Add_BarrelLength = 4
+att.Add_BarrelLength = -6
 
 att.ActivateElements = {"hg_s"}
 ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_s")
 
 local att = {}
 
-att.PrintName = "Short Handguard"
+att.PrintName = "6.5\" PDW Barrel"
 att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
 att.Description = "Guh?"
 att.Desc_Pros = {
@@ -361,9 +368,9 @@ att.Desc_Neutrals = {
 att.Slot = "uc_myt_scar_hg"
 
 att.AutoStats = true
-att.SortOrder = 4
+att.SortOrder = 6.5
 
-att.Add_BarrelLength = 4
+att.Add_BarrelLength = -10
 
 att.ActivateElements = {"hg_xs"}
 ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_xs")
@@ -372,7 +379,7 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_xs")
 
 local att = {}
 
-att.PrintName = "Whisper Handguard"
+att.PrintName = "16\" Whisper Barrel"
 att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
 att.Description = "XD"
 att.Desc_Pros = {
@@ -384,7 +391,7 @@ att.Desc_Neutrals = {
 att.Slot = "uc_myt_scar_hg"
 
 att.AutoStats = true
-att.SortOrder = 4
+att.SortOrder = 16
 
 att.Silencer = true
 att.Override_MuzzleEffect = "muzzleflash_suppressed"

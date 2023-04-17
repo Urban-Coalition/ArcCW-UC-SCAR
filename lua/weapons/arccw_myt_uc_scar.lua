@@ -163,7 +163,7 @@ SWEP.BarrelOffsetHip = Vector(2, 0, -5)
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-8, 4, -7.5),
+    pos        =    Vector(-3, 4, -8),
     ang        =    Angle(-6, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
 }
@@ -987,8 +987,8 @@ SWEP.Attachments = {
         VMScale = Vector(1.3, 1.3, 1.3),
     },
     {
-        PrintName = "Handguard",
-        DefaultAttName = "Standard Handguard",
+        PrintName = "Barrel",
+        DefaultAttName = "14\" Standard Barrel",
         Slot = "uc_myt_scar_hg",
         Bone = "W_Main",
         Offset = {
