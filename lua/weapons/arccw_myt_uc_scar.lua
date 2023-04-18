@@ -325,6 +325,9 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     end
 end
 
+
+SWEP.Hook_Think = ArcCW.UC.ADSReload
+
 SWEP.NoHideLeftHandInCustomization = true
 SWEP.Animations = {
     ["idle"] = {
