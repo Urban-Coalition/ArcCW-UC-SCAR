@@ -291,6 +291,10 @@ SWEP.AttachmentElements = {
 	["stock_pdwf"] = { VMBodygroups = { {ind = 7, bg = 5}, }, },
 	["stock_fold"] = { VMBodygroups = { {ind = 7, bg = 2}, }, },
 	["stock_foldf"] = { VMBodygroups = { {ind = 7, bg = 3}, }, },
+
+	["grip_flat"] = { VMBodygroups = { {ind = 6, bg = 1}, }, },	
+	["grip_hollow"] = { VMBodygroups = { {ind = 6, bg = 2}, }, },
+	
 	["hg_l"] = {
         VMBodygroups = {
             {ind = 8, bg = 3},
@@ -1177,9 +1181,14 @@ SWEP.Attachments = {
         --InstalledEles = {"ud_m16_clamp_fullsize"}
     },
     {
+        PrintName = "Grip Type",
+        Slot = {"uc_myt_scar_grip"},
+        DefaultAttName = "Standard Grip",
+    },
+    {
         PrintName = "Stock",
         Slot = {"uc_myt_scar_stock"},
-        DefaultAttName = "Full Stock",
+        DefaultAttName = "Standard Stock",
     },
     {
         PrintName = "Magazine",

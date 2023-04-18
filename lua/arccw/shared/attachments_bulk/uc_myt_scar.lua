@@ -520,3 +520,43 @@ att.Add_BarrelLength = 4
 att.ActivateElements = {"hg_sd"}
 att.GivesFlags = {"sd"}
 ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_sd")
+
+
+
+-- Grips ---------------------------------------------------------
+
+local att = {}
+
+att.PrintName = "Flat Grip"
+att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
+att.Description = "you cant even fucking see it"
+att.Desc_Pros = {
+}
+att.Desc_Cons = {
+}
+att.Desc_Neutrals = {
+}
+att.Slot = "uc_myt_scar_grip"
+
+att.AutoStats = true
+
+att.ActivateElements = {"grip_flat"}
+ArcCW.LoadAttachmentType(att, "uc_myt_scar_grip_flat")
+
+local att = {}
+
+att.PrintName = "Skeleton Grip"
+att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
+att.Description = "Hollow Knight Silksong"
+att.Desc_Pros = {
+}
+att.Desc_Cons = {
+}
+att.Desc_Neutrals = {
+}
+att.Slot = "uc_myt_scar_grip"
+
+att.AutoStats = true
+
+att.ActivateElements = {"grip_hollow"}
+ArcCW.LoadAttachmentType(att, "uc_myt_scar_grip_ske")
