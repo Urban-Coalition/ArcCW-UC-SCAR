@@ -242,31 +242,27 @@ SWEP.Hook_AddShootSound = ArcCW.UC.InnyOuty
 SWEP.AttachmentElements = {	
     ["conv_9mm"] = {
         NameChange = "Aanvulloir 16",
-        TrueNameChange = "MK-16",
+        TrueNameChange = "SCAR-9",
         VMBodygroups = {
             {ind = 2, bg = 3},
             {ind = 4, bg = 4},
         },
-        --[[Override_IronSightStruct = {
-            Pos = Vector(-3.52, 5, -0.38),
-            Ang = Angle(0.64, 0, -5),
-            Magnification = 1.1
-        },]]
     },	 
 	["conv_ak"] = {
         NameChange = "Chijmaar 32",
-        TrueNameChange = "MK-47",
+        TrueNameChange = "SCAR-47",
         VMBodygroups = {
             {ind = 2, bg = 2},
             {ind = 4, bg = 2},
         },
-        --[[Override_IronSightStruct = {
-            Pos = Vector(-3.52, 5, -0.38),
-            Ang = Angle(0.64, 0, -5),
-            Magnification = 1.1
-        },]]
-        AttPosMods = {[3] = {vpos = Vector(0, -2.95, 12)},
-        }
+    },
+	["conv_ak70"] = {
+        NameChange = "Chijmaar 70",
+        TrueNameChange = "SCAR-47/70",
+        VMBodygroups = {
+            {ind = 2, bg = 4},
+            {ind = 4, bg = 3},
+        },
     },
 	["conv_556"] = {
         NameChange = "Scarlett 17",
@@ -275,40 +271,25 @@ SWEP.AttachmentElements = {
             {ind = 2, bg = 1},
             {ind = 4, bg = 1},
         },
-        --[[Override_IronSightStruct = {
-            Pos = Vector(-3.52, 5, -0.38),
-            Ang = Angle(0.64, 0, -5),
-            Magnification = 1.1
-        },]]
     },	
 	["conv_ssr"] = {
         NameChange = "Lancierie 24",
-        TrueNameChange = "MK-SSR",
+        TrueNameChange = "SCAR-SSR",
         VMBodygroups = {
             {ind = 2, bg = 5},
             {ind = 4, bg = 0},
         },
-        --[[Override_IronSightStruct = {
-            Pos = Vector(-3.52, 5, -0.38),
-            Ang = Angle(0.64, 0, -5),
-            Magnification = 1.1
-        },]]
     },	
+
 	["stock_ssr"] = {
         VMBodygroups = {
             {ind = 7, bg = 6},
         },
     },
-	["stock_pdw"] = {
-        VMBodygroups = {
-            {ind = 7, bg = 4},
-        },
-    },
-	["stock_fold"] = {
-        VMBodygroups = {
-            {ind = 7, bg = 2},
-        },
-    },
+	["stock_pdw"] = { VMBodygroups = { {ind = 7, bg = 4}, }, },
+	["stock_pdwf"] = { VMBodygroups = { {ind = 7, bg = 5}, }, },
+	["stock_fold"] = { VMBodygroups = { {ind = 7, bg = 2}, }, },
+	["stock_foldf"] = { VMBodygroups = { {ind = 7, bg = 3}, }, },
 	["hg_l"] = {
         VMBodygroups = {
             {ind = 8, bg = 3},
@@ -393,10 +374,10 @@ SWEP.Animations = {
         LHIKOut = 0.4,
         SoundTable = {
             {s = common .. "raise.ogg", t = 0},
-            {s = common .. "rattle.ogg", t = 0.2},
-            {s = path .. "chpull.ogg",   t = 0.15},
-            {s = common .. "cloth_4.ogg",  t = 0.5},
-            {s = path .. "chrelease.ogg",  t = 0.5},
+            {s = common .. "rattle.ogg", t = 0.2 + 5/40},
+            {s = path .. "chpull.ogg",   t = 0.15 + 5/40},
+            {s = common .. "cloth_4.ogg",  t = 0.5 + 5/40},
+            {s = path .. "chrelease.ogg",  t = 0.5 + 5/40},
         },
         ProcDraw = true,
     },	
@@ -666,10 +647,12 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.475,
         SoundTable = {
-            {s = common .. "movement-rifle-04.ogg", t = 0.2},
-            {s = rottle, t = 0.25},
-            {s = rottle, t = 1.2},
-            {s = common .. "movement-rifle-03.ogg", t = 1.25},
+            {s = rottle, 			                    t = 0/40},
+            {s = "weapons/uc_osk/magout-9.ogg", 			t = 20/40},
+            {s = rottle, 			                    t = 17/40},
+            {s = "weapons/uc_osk/struggle-9.ogg", 		t = 53/40},
+            {s = "weapons/uc_osk/magin-9.ogg", 			t = 68/40},
+            {s = rottle, 			                    t = 69/40},
         },
     },
     ["enter_inspect_empty_9mm"] = {
@@ -695,10 +678,12 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.475,
         SoundTable = {
-            {s = common .. "movement-rifle-04.ogg", t = 0.2},
-            {s = rottle, t = 0.25},
-            {s = rottle, t = 1.2},
-            {s = common .. "movement-rifle-03.ogg", t = 1.25},
+            {s = rottle, 			                    t = 0/40},
+            {s = "weapons/uc_osk/magout-9.ogg", 			t = 20/40},
+            {s = rottle, 			                    t = 17/40},
+            {s = "weapons/uc_osk/struggle-9.ogg", 		t = 53/40},
+            {s = "weapons/uc_osk/magin-9.ogg", 			t = 68/40},
+            {s = rottle, 			                    t = 69/40},
         },
     },	 
 	
@@ -1032,6 +1017,110 @@ SWEP.Animations = {
             {s = "weapons/uc_osk/magin.ogg", 			t = 70/40},
             {s = rottle, 			                    t = 69/40},
             {s = common .. "shoulder.ogg", 	        	t = 88/40, v = .5},
+        },
+    },	
+	
+	-- ak drum--
+
+    ["reload_ak_drum"] = {
+        Source = "reload_ak_drum",
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        MinProgress = 1.5,
+        LastClip1OutTime = 0.9,
+        LHIK = true,
+        LHIKIn = 0.4,
+        LHIKEaseIn = 0.4,
+        LHIKEaseOut = 0.3,
+        LHIKOut = 0.5,
+        SoundTable = {
+            {s = rottle, 			                    t = 0/40},
+            {s = "weapons/uc_osk/magout-762.ogg", 		t = 12/40},
+            {s = rottle, 			                    t = 20/40},
+            {s = common .. "magpouch.ogg",              t = 32/40},
+            {s = "weapons/uc_osk/struggle-762.ogg", 	t = 54/40},
+            {s = "weapons/uc_osk/magin-762.ogg", 		t = 64/40},
+			{s = "weapons/uc_osk/magtap.ogg", 			t = 75/40},
+            {s = rottle, 			                    t = 60/40},
+        },
+    },
+    ["reload_empty_ak_drum"] = {
+        Source = "reload_empty_ak_drum",
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        MinProgress = 2,
+        LastClip1OutTime = 0.7,
+        LHIK = true,
+        LHIKIn = 0.4,
+        LHIKEaseIn = 0.4,
+        LHIKEaseOut = 0.3,
+        LHIKOut = 0.5,
+        SoundTable = {
+            {s = rottle, 			                    t = 0/40},
+            {s = "weapons/uc_osk/magout-762.ogg", 		t = 12/40},
+            {s = rottle, 			                    t = 20/40},
+            {s = common .. "magpouch.ogg",              t = 32/40},
+            {s = "weapons/uc_osk/struggle-762.ogg", 	t = 54/40},
+            {s = "weapons/uc_osk/magin-762.ogg", 		t = 64/40},
+            {s = rottle, 			                    t = 69/40},
+            {s = path .. "chpull.ogg",   				t = 95/40},
+            {s = common .. "cloth_4.ogg", 				t = 98/40},
+            {s = path .. "chrelease.ogg",  				t = 106/40},
+            {s = rottle, 			                    t = 114/40},
+        },
+    },
+
+    ["enter_inspect_ak_drum"] = {
+        Source = "inspect_enter_ak_drum",
+        LHIK = true,
+        LHIKIn = 0.2,
+        LHIKOut = 0,
+        SoundTable = {
+            {s = rottle, t = 0},
+            {s = common .. "movement-rifle-02.ogg", t = 0.1},
+        },
+    },
+    ["idle_inspect_ak_drum"] = {
+        Source = "inspect_loop_ak_drum",
+        -- time = 72 / 60,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0
+    },
+    ["exit_inspect_ak_drum"] = {
+        Source = "inspect_exit_ak_drum",
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKEaseOut = 0.3,
+        LHIKOut = 0.475,
+        SoundTable = {
+            {s = rottle, 			                    t = 0/40},
+            {s = common .. "shoulder.ogg", 	        	t = 20/40, v = .5},
+        },
+    },
+    ["enter_inspect_empty_ak_drum"] = {
+        Source = "inspect_enter_empty_ak_drum",
+        LHIK = true,
+        LHIKIn = 0.2,
+        LHIKOut = 0,
+        SoundTable = {
+            {s = rottle, t = 0},
+            {s = common .. "movement-rifle-02.ogg", t = 0.1},
+        },
+    },
+    ["idle_inspect_empty_ak_drum"] = {
+        Source = "inspect_loop_empty_ak_drum",
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0,
+    },
+    ["exit_inspect_empty_ak_drum"] = {
+        Source = "inspect_exit_empty_ak_drum",
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKEaseOut = 0.3,
+        LHIKOut = 0.475,
+        SoundTable = {
+            {s = rottle, 			                    t = 0/40},
+            {s = common .. "shoulder.ogg", 	        	t = 20/40, v = .5},
         },
     },	
 }

@@ -5,10 +5,10 @@ local att = {}
 
 
 -- Magazines/Caliber Conversions ---------------------------------------------------------
-att.PrintName = "25-Round 9mm"
+att.PrintName = "40-Round 9x19mm"
 
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
-att.Description = ""
+att.Description = "Evil magazine adaptor. Takes anything that goes in to a Glock, in this case, Vector mags"
 att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
@@ -19,7 +19,7 @@ att.Mult_RPM = 1.25 -- 750 rpm
 att.AutoStats = true
 att.HideIfBlocked = true
 
-att.Override_ClipSize = 25
+att.Override_ClipSize = 40  -- bof?
 
 att.ActivateElements = {"conv_9mm"}
 
@@ -62,11 +62,11 @@ end
 ArcCW.LoadAttachmentType(att, "uc_myt_scar_cal_9mm")
 
 local att = {}
-
-att.PrintName = "30-Round 7.62 Mag"
+---------------------------------------------------------------------------------------------------------------------
+att.PrintName = "30-Round 7.62x39mm Mag"
 
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
-att.Description = "Prototype assault rifle conversion that retains more stopping power relative to .308 than the more common SCAR-L."
+att.Description = "Multi-Calibre configuration specifically adapted for scavenging in Easter Europe. Conversion retains more stopping power relative to .308 than the more common SCAR-L."
 att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
@@ -119,6 +119,66 @@ end
 
 ArcCW.LoadAttachmentType(att, "uc_myt_scar_cal_762")
 
+---------------------------------------------------------------------------------------------------------------------
+local att = {}
+
+att.PrintName = "70-Round 7.62x39mm Mag"
+
+att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
+att.Description = "You are not getting a HAMR."
+att.Desc_Pros = {}
+att.Desc_Cons = {}
+att.Desc_Neutrals = {}
+att.Slot = "uc_myt_scar_mag"
+
+att.AutoStats = true
+att.HideIfBlocked = true
+
+att.Override_ClipSize = 70
+
+att.Mult_Recoil = .7
+att.Mult_Damage = 50 / 65
+att.Mult_DamageMin = 25 / 35
+
+att.ActivateElements = {"conv_ak70"}
+
+local tail762 = ")/arccw_uc/common/762x39/"
+local fire762dist = {tail762 .. "fire-dist-762x39-rif-ext-01.ogg", tail762 .. "fire-dist-762x39-rif-ext-02.ogg", tail762 .. "fire-dist-762x39-rif-ext-03.ogg", tail762 .. "fire-dist-762x39-rif-ext-04.ogg", tail762 .. "fire-dist-762x39-rif-ext-05.ogg", tail762 .. "fire-dist-762x39-rif-ext-06.ogg"}
+local fire762distint = {tail762 .. "fire-dist-762x39-rif-int-01.ogg", tail762 .. "fire-dist-762x39-rif-int-02.ogg", tail762 .. "fire-dist-762x39-rif-int-03.ogg", tail762 .. "fire-dist-762x39-rif-int-04.ogg", tail762 .. "fire-dist-762x39-rif-int-05.ogg", tail762 .. "fire-dist-762x39-rif-int-06.ogg"}
+local fire762 = {path .. "fire-762-01.ogg", path .. "fire-762-02.ogg", path .. "fire-762-03.ogg", path .. "fire-762-04.ogg", path .. "fire-762-05.ogg", path .. "fire-762-06.ogg"}
+local fire762supp = {path .. "fire-762-sup-01.ogg", path .. "fire-762-sup-02.ogg", path .. "fire-762-sup-03.ogg", path .. "fire-762-sup-04.ogg", path .. "fire-762-sup-05.ogg", path .. "fire-762-sup-06.ogg"}
+
+att.Hook_GetShootSound = function(wep, fsound)
+    if wep:GetBuff_Override("Silencer") then
+        return fire762supp
+    else
+        return fire762
+    end
+end
+
+att.Hook_GetDistantShootSoundOutdoors = function(wep, distancesound)
+    if wep:GetBuff_Override("Silencer") then
+        -- fallback to script
+    else
+        return fire762dist
+    end
+end
+
+att.Hook_GetDistantShootSoundIndoors = function(wep, distancesound)
+    if wep:GetBuff_Override("Silencer") then
+        -- fallback to script
+    else
+        return fire762distint
+    end
+end
+
+att.Hook_TranslateAnimation = function(wep, anim)
+    return anim .. "_ak_drum"
+end
+
+ArcCW.LoadAttachmentType(att, "uc_myt_scar_cal_762_70")
+
+---------------------------------------------------------------------------------------------------------------------
 local att = {}
 
 att.PrintName = "SCAR-L 30-Round STANAG Mag"
@@ -196,10 +256,11 @@ end
 
 ArcCW.LoadAttachmentType(att, "uc_myt_scar_cal_556")
 
+---------------------------------------------------------------------------------------------------------------------
 local att = {}
 
-att.PrintName = "SCAR-H 10-Round Reduced Mag"
-att.AbbrevName = "10-Round Reduced Mag"
+att.PrintName = "SCAR-H 10-Round SPP Mag"
+att.AbbrevName = "10-Round SPP Mag"
 
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
 att.Description = ""
@@ -208,6 +269,9 @@ att.Desc_Cons = {}
 att.Desc_Neutrals = {}
 att.Slot = "uc_myt_scar_mag"
 att.SortOrder = 10
+
+att.Mult_DamageMin = 1.2   --- a fucking reason to use it, lol it reloads slower than 20 round
+att.Mult_Damage = 1.2
 
 att.AutoStats = true
 att.HideIfBlocked = true
@@ -269,15 +333,29 @@ att.Slot = "uc_myt_scar_stock"
 att.AutoStats = true
 att.SortOrder = 4
 
-att.Mult_HipDispersion = 1.25
-att.Mult_MoveDispersion = 1.2
-att.Mult_SightTime = 0.75
-att.Mult_Recoil = 1.25
-att.Mult_Sway = 1.5
-
 att.Add_BarrelLength = 0
 
-att.ActivateElements = {"stock_pdw"}
+att.ToggleLockDefault = true
+att.ToggleStats = {
+    {
+        PrintName = "Extended",
+        AutoStats = true,
+        ActivateElements = {"stock_pdw"},
+		Mult_HipDispersion = 1.25
+		Mult_MoveDispersion = 1.2
+		Mult_SightTime = 0.75
+		Mult_Recoil = 1.25
+		Mult_Sway = 1.5
+    },
+    {
+        PrintName = "Collapsed",
+        AutoStats = true,
+        Mult_HipDispersion = 0.6,
+        Mult_MoveDispersion = 0.6,
+        Mult_RecoilSide = 2,
+        ActivateElements = {"stock_pdwf"},
+    },
+}
 
 ArcCW.LoadAttachmentType(att, "uc_myt_scar_stock_pdw")
 
@@ -297,15 +375,29 @@ att.Slot = "uc_myt_scar_stock"
 att.AutoStats = true
 att.SortOrder = 4
 
-att.Mult_HipDispersion = 0.75
-att.Mult_MoveDispersion = 0.85
-att.Mult_SightTime = 1.15
-att.Mult_Recoil = 1.25
-att.Mult_Sway = 1.5
-
 att.Add_BarrelLength = 0
 
-att.ActivateElements = {"stock_fold"}
+att.ToggleStats = {
+    {
+        PrintName = "Extended",
+        AutoStats = true,
+        ActivateElements = {"stock_fold"},
+		Mult_HipDispersion = 0.75
+		Mult_MoveDispersion = 0.85
+		Mult_SightTime = 1.15
+		Mult_Recoil = 1.25
+		Mult_Sway = 1.5
+    },
+    {
+        PrintName = "Collapsed",
+        AutoStats = true,
+        Mult_HipDispersion = 0.6,
+        Mult_MoveDispersion = 0.6,
+        Mult_RecoilSide = 2,
+        ActivateElements = {"stock_foldf"},
+    },
+}
+
 ArcCW.LoadAttachmentType(att, "uc_myt_scar_stock_fold")
 
 
