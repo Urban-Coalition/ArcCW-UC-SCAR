@@ -341,11 +341,11 @@ att.ToggleStats = {
         PrintName = "Extended",
         AutoStats = true,
         ActivateElements = {"stock_pdw"},
-		Mult_HipDispersion = 1.25
-		Mult_MoveDispersion = 1.2
-		Mult_SightTime = 0.75
-		Mult_Recoil = 1.25
-		Mult_Sway = 1.5
+		Mult_HipDispersion = 1.25,
+		Mult_MoveDispersion = 1.2,
+		Mult_SightTime = 0.75,
+		Mult_Recoil = 1.25,
+		Mult_Sway = 1.5,
     },
     {
         PrintName = "Collapsed",
@@ -382,11 +382,11 @@ att.ToggleStats = {
         PrintName = "Extended",
         AutoStats = true,
         ActivateElements = {"stock_fold"},
-		Mult_HipDispersion = 0.75
-		Mult_MoveDispersion = 0.85
-		Mult_SightTime = 1.15
-		Mult_Recoil = 1.25
-		Mult_Sway = 1.5
+		Mult_HipDispersion = 0.75,
+		Mult_MoveDispersion = 0.85,
+		Mult_SightTime = 1.15,
+		Mult_Recoil = 1.25,
+		Mult_Sway = 1.5,
     },
     {
         PrintName = "Collapsed",
