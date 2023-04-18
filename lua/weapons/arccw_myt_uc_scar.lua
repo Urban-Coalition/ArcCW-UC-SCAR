@@ -71,8 +71,8 @@ SWEP.ReducedClipSize = 10
 
 -- Recoil --
 
-SWEP.Recoil = 0.7
-SWEP.RecoilSide = 0.3
+SWEP.Recoil = 1.1
+SWEP.RecoilSide = 0.7
 
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 1
@@ -294,17 +294,66 @@ SWEP.AttachmentElements = {
             Magnification = 1.1
         },]]
     },	
-	["stock_ssr"] = { VMBodygroups = { {ind = 7, bg = 6}, }, },
-	["stock_pdw"] = { VMBodygroups = { {ind = 7, bg = 4}, }, },
-	["stock_fold"] = { VMBodygroups = { {ind = 7, bg = 2}, }, },
-	["hg_l"] = { VMBodygroups = { {ind = 8, bg = 3}, {ind = 9, bg = 3}, }, 
-                 AttPosMods = {[3] = {vpos = Vector(0, -1.65, 21.5)},}},
-	["hg_sd"] = { VMBodygroups = { {ind = 8, bg = 4}, {ind = 9, bg = 4},	{ind = 1, bg = 3}, }, 
-                 AttPosMods = {[3] = {vpos = Vector(0, -1.65, 15.5)}, [4] = {vpos = Vector(0, 0, 9)}, [5] = {vpos = Vector(-1.5, -1.7, 9.5)},}},
-	["hg_s"] = { VMBodygroups = { {ind = 8, bg = 1}, {ind = 9, bg = 1},		{ind = 1, bg = 1}, }, 
-                 AttPosMods = {[3] = {vpos = Vector(0, -1.65, 12.9)}, [4] = {vpos = Vector(0, -0.75, 7.5)}, [5] = {vpos = Vector(-1, -1.7, 8.5)},}},
-	["hg_xs"] = { VMBodygroups = { {ind = 8, bg = 2}, {ind = 9, bg = 2},	{ind = 1, bg = 2}, }, 
-                  AttPosMods = {[3] = {vpos = Vector(0, -1.65, 10.8)}, [4] = {vpos = Vector(0, -0.75, 7)}, [5] = {vpos = Vector(-1, -1.7, 7.5)},}},
+	["stock_ssr"] = {
+        VMBodygroups = {
+            {ind = 7, bg = 6},
+        },
+    },
+	["stock_pdw"] = {
+        VMBodygroups = {
+            {ind = 7, bg = 4},
+        },
+    },
+	["stock_fold"] = {
+        VMBodygroups = {
+            {ind = 7, bg = 2},
+        },
+    },
+	["hg_l"] = {
+        VMBodygroups = {
+            {ind = 8, bg = 3},
+            {ind = 9, bg = 3},
+        },
+        AttPosMods = {
+            [3] = { vpos = Vector(0, -1.65, 22.0) },
+        }
+    },
+    ["hg_sd"] = {
+        VMBodygroups = {
+            {ind = 8, bg = 4},
+            {ind = 9, bg = 4},
+            {ind = 1, bg = 3},
+        },
+        AttPosMods = {
+            [3] = { vpos = Vector(0, -1.65, 15.5) },
+            [4] = { vpos = Vector(0, 0, 9) },
+            [5] = { vpos = Vector(-1.5, -1.7, 9.5) },
+        },
+    },
+    ["hg_s"] = {
+        VMBodygroups = {
+            {ind = 8, bg = 1},
+            {ind = 9, bg = 1},
+            {ind = 1, bg = 1},
+        }, 
+        AttPosMods = {
+            [3] = { vpos = Vector(0, -1.65, 12.9) },
+            [4] = { vpos = Vector(0, -0.75, 7.5) },
+            [5] = { vpos = Vector(-1, -1.7, 8.5) },
+        },
+    },
+    ["hg_xs"] = {
+        VMBodygroups = {
+            {ind = 8, bg = 2},
+            {ind = 9, bg = 2},
+            {ind = 1, bg = 2},
+        }, 
+        AttPosMods = {
+            [3] = { vpos = Vector(0, -1.65, 11) },
+            [4] = { vpos = Vector(0, -0.75, 7) },
+            [5] = { vpos = Vector(-1, -1.7, 7.5) },
+        },
+    },
 }
 
 SWEP.DefaultBodygroups = "000000000000000"
@@ -396,6 +445,17 @@ SWEP.Animations = {
             {s = common .. "cloth_6.ogg", t = 0.2},
         },
     },
+    ["fix"] = {
+        Source = "fix",
+        ShellEjectAt = 0.5,
+        SoundTable = {
+            {s = common .. "raise.ogg", t = 0},
+            {s = common .. "rattle.ogg", t = 0.2},
+            {s = path .. "chpull.ogg",   t = 0.15},
+            {s = common .. "cloth_4.ogg",  t = 0.5},
+            {s = path .. "chrelease.ogg",  t = 0.5},
+        },
+    },  
     ["fire"] = {
         Source = "fire",
         ShellEjectAt = 0.01,
@@ -1062,11 +1122,11 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Charm",
-        Slot = {"charm", "fml_charm", "ud_m16_charm"},
+        Slot = {"charm", "fml_charm"},
         FreeSlot = true,
-        Bone = "m16_parent",
+        Bone = "W_Main",
         Offset = {
-            vpos = Vector(0.6, 1, 5),
+            vpos = Vector(0.8, -1.9, 2.5),
             vang = Angle(90, 0, -90),
         },
     },
