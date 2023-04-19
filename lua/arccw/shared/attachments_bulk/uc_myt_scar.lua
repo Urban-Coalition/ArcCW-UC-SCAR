@@ -9,7 +9,7 @@ att.PrintName = "SCAR-9 40-Round 9x19mm Mag"
 att.AbbrevName = "40-Round 9mm Mag"
 
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
-att.Description = "Evil magazine adaptor. Takes anything that goes in to a Glock, in this case, Vector mags"
+att.Description = "Evil magazine adaptor. Takes anything that goes in to a Glock, even Vector mags."
 att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
@@ -32,7 +32,7 @@ att.Override_Ammo = "pistol"
 att.Override_Trivia_Calibre = "9x19mm Parabellum"
 att.Override_Trivia_Class = "Submachine Gun"
 att.Override_ShellModel = "models/weapons/arccw/uc_shells/9x19.mdl"
-att.Override_ShellScale = 1
+att.Override_ShellScale = 0.8
 att.Override_ShellSounds = ArcCW.PistolShellSoundsTable
 
 local path = ")weapons/uc_osk/"
@@ -90,6 +90,8 @@ att.AutoStats = true
 att.HideIfBlocked = true
 
 att.Override_ClipSize = 30
+att.Override_Trivia_Calibre = "7.62x39mm Soviet"
+att.Override_Trivia_Class = "Assault Rifle"
 
 att.Mult_Recoil = .7
 att.Mult_Damage = 50 / 65
@@ -151,6 +153,8 @@ att.AutoStats = true
 att.HideIfBlocked = true
 
 att.Override_ClipSize = 70
+att.Override_Trivia_Calibre = "7.62x39mm Soviet"
+att.Override_Trivia_Class = "Assault Rifle"
 
 att.Mult_Recoil = .7
 att.Mult_Damage = 50 / 65
@@ -201,7 +205,7 @@ att.PrintName = "SCAR-L 30-Round STANAG Mag"
 att.AbbrevName = "30-Round 5.56 Mag"
 
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
-att.Description = "Barrel and receiver group that accepts an intermediate cartridge, changing the weapon into an assault rifle."
+att.Description = "Barrel and receiver group that accepts an intermediate cartridge, downgrading the weapon into an assault rifle."
 att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
@@ -279,7 +283,7 @@ att.PrintName = "SCAR-H 10-Round SPP Mag"
 att.AbbrevName = "10-Round .308 Mag"
 
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
-att.Description = ""
+att.Description = "Flush magazine armed with     harder    bullets     what increases    damage    by      making it     sharper?? Text impending."
 att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
@@ -288,6 +292,7 @@ att.SortOrder = 10 + 308
 
 att.Mult_DamageMin = 1.2   --- a fucking reason to use it, lol it reloads slower than 20 round
 att.Mult_Damage = 1.2
+att.Mult_Penetration = 40 / 20
 
 att.AutoStats = true
 att.HideIfBlocked = true
@@ -309,7 +314,7 @@ local att = {}
 
 att.PrintName = "Marksman Stock"
 att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
-att.Description = "Not so compact stock."
+att.Description = [[Heavy-duty and cumbersome marksman stock. Advised to use with according marksman build]]
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -388,7 +393,7 @@ local att = {}
 
 att.PrintName = "PDW Stock"
 att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
-att.Description = "Compact stock."
+att.Description = "Collapsable stock that shortens the rifle when collapsed while still retaining a proper cheek weld.\n\nToggling the stock modifies performance accordingly."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -430,7 +435,7 @@ local att = {}
 
 att.PrintName = "Folding Stock"
 att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
-att.Description = "Wrong gun stock."
+att.Description = "Wrong gun stock. ARM CLIPPING"
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -472,7 +477,7 @@ local att = {}
 att.PrintName = "Compact Stock"
 
 att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
-att.Description = "Collapse the stock, enhancing the weapon's utility in close-quarters combat."
+att.Description = "Collapse the stock, enhancing the weapon's utility in corps-a-corps environment."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -502,7 +507,7 @@ local att = {}
 -- Barrels ---------------------------------------------------------
 att.PrintName = "20\" LB Barrel"
 att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
-att.Description = "Rail."
+att.Description = "Extended barrel with added railling."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -544,7 +549,7 @@ local att = {}
 
 att.PrintName = "6.5\" PDW Barrel"
 att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
-att.Description = "Guh?"
+att.Description = "Shoots your finger off with this one trick."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -567,7 +572,7 @@ local att = {}
 
 att.PrintName = "16\" Whisper Barrel"
 att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
-att.Description = "XD"
+att.Description = "Mytton, youre susposed to stop digging up dead ideas"
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
