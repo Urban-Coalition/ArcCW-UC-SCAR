@@ -335,7 +335,7 @@ SWEP.AttachmentElements = {
             {ind = 1, bg = 2},
         }, 
         AttPosMods = {
-            [3] = { vpos = Vector(0, -1.65, 11) },
+            [3] = { vpos = Vector(0, -1.65, 10.5) },
             [4] = { vpos = Vector(0, -0.75, 7) },
             [5] = { vpos = Vector(-1, -1.7, 7.5) },
         },
@@ -358,6 +358,8 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
         else   vm:SetBodygroup(5, 0) end
     
     end
+
+    if wep.Attachments[3].Installed then vm:SetBodygroup(9, 4) end	
 end
 
 
