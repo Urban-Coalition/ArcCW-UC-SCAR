@@ -136,7 +136,7 @@ SWEP.ExtraSightDist = 7
 
 -- Ironsights / Customization / Poses --
 
-SWEP.HolsterPos = Vector(0.5, 5, -0.5)
+SWEP.HolsterPos = Vector(0.5, 8, -0.5)
 SWEP.HolsterAng = Angle(-10, 8, -15)
 
 SWEP.HoldtypeHolstered = "passive"
@@ -289,6 +289,8 @@ SWEP.AttachmentElements = {
 	["stock_folded"] = { VMBodygroups = { {ind = 7, bg = 1}, }, },
 	["stock_pdw"] = { VMBodygroups = { {ind = 7, bg = 4}, }, },
 	["stock_pdwf"] = { VMBodygroups = { {ind = 7, bg = 5}, }, },
+	["stock_231_ex"] = { VMBodygroups = { {ind = 7, bg = 7}, {ind = 3, bg = 1}, }, },
+	["stock_231_in"] = { VMBodygroups = { {ind = 7, bg = 8}, {ind = 3, bg = 1}, }, },
 	["stock_fold"] = { VMBodygroups = { {ind = 7, bg = 2}, }, },
 	["stock_foldf"] = { VMBodygroups = { {ind = 7, bg = 3}, }, },
 

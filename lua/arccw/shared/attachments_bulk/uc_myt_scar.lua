@@ -5,7 +5,8 @@ local att = {}
 
 
 -- Magazines/Caliber Conversions ---------------------------------------------------------
-att.PrintName = "40-Round 9x19mm"
+att.PrintName = "SCAR-9 40-Round 9x19mm Mag"
+att.AbbrevName = "40-Round 9mm Mag"
 
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
 att.Description = "Evil magazine adaptor. Takes anything that goes in to a Glock, in this case, Vector mags"
@@ -13,15 +14,26 @@ att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
 att.Slot = "uc_myt_scar_mag"
+att.SortOrder = 40 + 9
 
 att.Mult_RPM = 1.25 -- 750 rpm
 
 att.AutoStats = true
 att.HideIfBlocked = true
 
+att.Mult_Damage = 30 / 65
+att.Mult_DamageMin = 17 / 35
+
 att.Override_ClipSize = 40  -- bof?
 
 att.ActivateElements = {"conv_9mm"}
+
+att.Override_Ammo = "pistol"
+att.Override_Trivia_Calibre = "9x19mm Parabellum"
+att.Override_Trivia_Class = "Submachine Gun"
+att.Override_ShellModel = "models/weapons/arccw/uc_shells/9x19.mdl"
+att.Override_ShellScale = 1
+att.Override_ShellSounds = ArcCW.PistolShellSoundsTable
 
 local path = ")weapons/uc_osk/"
 local common = ")/arccw_uc/common/"
@@ -63,7 +75,8 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_cal_9mm")
 
 local att = {}
 ---------------------------------------------------------------------------------------------------------------------
-att.PrintName = "30-Round 7.62x39mm Mag"
+att.PrintName = "SCAR-47 30-Round 7.62x39mm Mag"
+att.AbbrevName = "30-Round 7.62 Mag"
 
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
 att.Description = "Multi-Calibre configuration specifically adapted for scavenging in Easter Europe. Conversion retains more stopping power relative to .308 than the more common SCAR-L."
@@ -71,6 +84,7 @@ att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
 att.Slot = "uc_myt_scar_mag"
+att.SortOrder = 30 + 308
 
 att.AutoStats = true
 att.HideIfBlocked = true
@@ -122,7 +136,8 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_cal_762")
 ---------------------------------------------------------------------------------------------------------------------
 local att = {}
 
-att.PrintName = "70-Round 7.62x39mm Mag"
+att.PrintName = "SCAR-47 70-Round 7.62x39mm Mag"
+att.AbbrevName = "70-Round 7.62 Mag"
 
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
 att.Description = "You are not getting a HAMR."
@@ -130,6 +145,7 @@ att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
 att.Slot = "uc_myt_scar_mag"
+att.SortOrder = 70 + 308
 
 att.AutoStats = true
 att.HideIfBlocked = true
@@ -184,13 +200,13 @@ local att = {}
 att.PrintName = "SCAR-L 30-Round STANAG Mag"
 att.AbbrevName = "30-Round 5.56 Mag"
 
-
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
 att.Description = "Barrel and receiver group that accepts an intermediate cartridge, changing the weapon into an assault rifle."
 att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
 att.Slot = "uc_myt_scar_mag"
+att.SortOrder = 30 + 56
 
 att.Override_Ammo = "smg1"
 att.Override_Trivia_Calibre = "5.56x45mm NATO"
@@ -260,7 +276,7 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_cal_556")
 local att = {}
 
 att.PrintName = "SCAR-H 10-Round SPP Mag"
-att.AbbrevName = "10-Round SPP Mag"
+att.AbbrevName = "10-Round .308 Mag"
 
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
 att.Description = ""
@@ -268,7 +284,7 @@ att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
 att.Slot = "uc_myt_scar_mag"
-att.SortOrder = 10
+att.SortOrder = 10 + 308
 
 att.Mult_DamageMin = 1.2   --- a fucking reason to use it, lol it reloads slower than 20 round
 att.Mult_Damage = 1.2
@@ -316,6 +332,57 @@ att.Add_BarrelLength = 0
 att.ActivateElements = {"stock_ssr"}
 
 ArcCW.LoadAttachmentType(att, "uc_myt_scar_stock_ssr")
+
+local att = {}
+
+att.PrintName = "AMCAR 231 Wire Stock"
+att.AbbrevName = "M231 Wire Stock"
+
+if GetConVar("arccw_truenames"):GetBool() then
+    att.PrintName = "M16 M231 Wire Stock"
+end
+
+att.Icon = Material("entities/att/acwatt_ud_m16_stock_231.png", "smooth mips")
+att.Description = "Wire stock used on the M231 FPW that provides some semblance of recoil control. Can be made even more agile by collapsing, improving point-shooting capabilities at the cost of recoil control.\n\nToggling this stock modifies performance accordingly."
+att.Desc_Pros = {
+}
+att.Desc_Cons = {
+}
+att.Desc_Neutrals = {
+}
+att.Slot = "uc_myt_scar_stock"
+
+att.AutoStats = true
+att.SortOrder = 3
+
+att.Mult_SightTime = 0.75
+att.Mult_Recoil = 1.25
+
+att.Add_BarrelLength = -4
+
+att.Mult_DrawTime = 0.75
+att.Mult_HolsterTime = 0.75
+
+att.ToggleSound = "arccw_uc/common/stockslide.ogg"
+
+att.ToggleLockDefault = true
+att.ToggleStats = {
+    {
+        PrintName = "Extended",
+        AutoStats = true,
+        ActivateElements = {"stock_231_ex"},
+    },
+    {
+        PrintName = "Collapsed",
+        AutoStats = true,
+        Mult_HipDispersion = 0.6,
+        Mult_MoveDispersion = 0.6,
+        Mult_RecoilSide = 2,
+        ActivateElements = {"stock_231_in"},
+    },
+}
+
+ArcCW.LoadAttachmentType(att, "uc_myt_scar_stock_wire")
 
 local att = {}
 
