@@ -357,21 +357,23 @@ SWEP.AttachmentElements = {
 SWEP.DefaultBodygroups = "000000000000000"
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
-    local vm = data.vm
-    local handguard = wep.Attachments[2].Installed
-    if wep.Attachments[1].Installed then 
+	local vm = data.vm
+	local handguard = wep.Attachments[2].Installed
+	if wep.Attachments[1].Installed then 
         if (handguard == "uc_myt_scar_hg_s") || (handguard == "uc_myt_scar_hg_sd") then vm:SetBodygroup(5, 3) 
         elseif handguard == "uc_myt_scar_hg_xs" then vm:SetBodygroup(5, 5)
+        elseif handguard == "uc_myt_scar_hg_20" then vm:SetBodygroup(5, 8)
         else   vm:SetBodygroup(5, 1) end
     
-    else
-        if (handguard == "uc_myt_scar_hg_s") || (handguard == "uc_myt_scar_hg_sd") then vm:SetBodygroup(5, 2) 
-        elseif handguard == "uc_myt_scar_hg_xs" then vm:SetBodygroup(5, 4)
-        else   vm:SetBodygroup(5, 0) end
-    
+	else
+		if (handguard == "uc_myt_scar_hg_s") || (handguard == "uc_myt_scar_hg_sd") then vm:SetBodygroup(5, 2) 
+		elseif handguard == "uc_myt_scar_hg_xs" then vm:SetBodygroup(5, 4)
+		elseif handguard == "uc_myt_scar_hg_20" then vm:SetBodygroup(5, 7)
+		else   vm:SetBodygroup(5, 0) end
+
     end
 
-    if wep.Attachments[3].Installed then vm:SetBodygroup(9, 4) end	
+	if wep.Attachments[3].Installed then vm:SetBodygroup(9, 4) end	
 end
 
 
