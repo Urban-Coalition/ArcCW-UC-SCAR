@@ -526,6 +526,27 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_l")
 
 local att = {}
 
+att.PrintName = "24\" MKX Barrel"
+att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
+att.Description = "Extended barrel with added handguard. Texture scretching galore."
+att.Desc_Pros = {
+}
+att.Desc_Cons = {
+}
+att.Desc_Neutrals = {
+}
+att.Slot = "uc_myt_scar_hg"
+
+att.AutoStats = true
+att.SortOrder = 24
+
+att.Add_BarrelLength = 8
+
+att.ActivateElements = {"hg_20"}
+ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_20")
+
+local att = {}
+
 att.PrintName = "10\" CQC Barrel"
 att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
 att.Description = "Guh?"

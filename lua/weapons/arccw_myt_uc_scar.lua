@@ -305,6 +305,16 @@ SWEP.AttachmentElements = {
         AttPosMods = {
             [3] = { vpos = Vector(0, -1.65, 22.0) },
         }
+    },	
+	["hg_20"] = {
+        VMBodygroups = {
+            {ind = 8, bg = 5},
+            {ind = 9, bg = 5},
+			{ind = 1, bg = 5},
+        },
+        AttPosMods = {
+            [3] = { vpos = Vector(0, -1.65, 23.1) },
+        }
     },
     ["hg_sd"] = {
         VMBodygroups = {
