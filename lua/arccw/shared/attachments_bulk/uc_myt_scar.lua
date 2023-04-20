@@ -582,6 +582,11 @@ att.Slot = "uc_myt_scar_hg"
 att.AutoStats = true
 att.SortOrder = 6.5
 
+att.LHIK = true
+att.Model = "models/weapons/arccw/atts/tactical_lhik.mdl"
+att.DroppedModel = "models/items/boxsrounds.mdl"
+att.ModelOffset = (Vector(0.41, 0, -1.63) - Vector(8, -0.85, -3))
+
 att.Add_BarrelLength = -10
 
 att.ActivateElements = {"hg_xs"}
