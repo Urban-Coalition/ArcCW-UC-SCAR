@@ -30,8 +30,8 @@ SWEP.TrueName = "SCAR-H"
 SWEP.Trivia_Class = "Battle Rifle"
 SWEP.Trivia_Desc = [[The Special Operations Forces Combat Assault Rifle, a highly modular rifle platform designed to specifications of the United States' SOCOM division. Configurable for close combat, marksmanship, and more.]]
 SWEP.Trivia_Calibre = "7.62x51mm NATO"
-SWEP.Trivia_Country = "Belgium"
-SWEP.Trivia_Manufacturer = "FN Herstal"
+SWEP.Trivia_Country = "Wallonia" -- massive funny
+SWEP.Trivia_Manufacturer = "Héristal du Hoog-Zert"
 SWEP.Trivia_Year = 2004
 
 -- Weapon slot --
@@ -42,6 +42,8 @@ SWEP.Slot = 2
 
 if GetConVar("arccw_truenames"):GetBool() then
     SWEP.PrintName = SWEP.TrueName
+    SWEP.Trivia_Manufacturer = "FN Herstal"
+    SWEP.Trivia_Country = "Belgium"
 end
 
 -- Viewmodel / Worldmodel / FOV --
