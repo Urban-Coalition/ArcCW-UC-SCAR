@@ -1149,8 +1149,9 @@ SWEP.Attachments = {
         --InstalledEles = {"upper_flat"}, no such thing
         Slot = {"optic","sniper_optic"},
         Bone = "W_Main",
+        VMScale = Vector(1.15, 1.15, 1.15),
         Offset = {
-            vpos = Vector(0, -3.75, 0.5),
+            vpos = Vector(-0, -3.78, 0.5),
             vang = Angle(90, 0, -90),
         },
     },
