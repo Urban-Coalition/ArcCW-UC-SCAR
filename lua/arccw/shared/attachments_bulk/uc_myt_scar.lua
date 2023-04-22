@@ -26,6 +26,14 @@ att.Mult_DamageMin = 17 / 35
 
 att.Override_ClipSize = 40  -- bof?
 
+att.Mult_Range = 0.4
+att.Mult_ShootSpeedMult = 1.1
+att.Mult_Recoil = 0.5
+att.Mult_HipDispersion = 0.85
+
+att.Mult_SightTime = 0.9
+att.Mult_Penetration = 6 / 18
+
 att.ActivateElements = {"conv_9mm"}
 
 att.Override_Ammo = "pistol"
@@ -67,6 +75,10 @@ att.Hook_GetDistantShootSoundIndoors = function(wep, distancesound)
     end
 end
 
+att.Hook_SelectReloadAnimation = function(wep, anim)  -- i remember why arccw is rubbish	MinProgress changes doesn't work with TranslateAnimation
+    return anim .. "_9mm"
+end
+
 att.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_9mm"
 end
@@ -79,7 +91,7 @@ att.PrintName = "SCAR-47 30-Round 7.62x39mm Mag"
 att.AbbrevName = "30-Round 7.62 Mag"
 
 att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
-att.Description = "Multi-Calibre configuration specifically adapted for scavenging in Easter Europe. Conversion retains more stopping power relative to .308 than the more common SCAR-L."
+att.Description = "Multi-Calibre configuration specifically adapted for scavenging in Eastern Europe. Conversion retains more stopping power relative to .308 than the more common SCAR-L."
 att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
@@ -129,6 +141,9 @@ att.Hook_GetDistantShootSoundIndoors = function(wep, distancesound)
     end
 end
 
+att.Hook_SelectReloadAnimation = function(wep, anim)
+    return anim .. "_ak"
+end
 att.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_ak"
 end
@@ -190,6 +205,10 @@ att.Hook_GetDistantShootSoundIndoors = function(wep, distancesound)
     else
         return fire762distint
     end
+end
+
+att.Hook_SelectReloadAnimation = function(wep, anim)
+    return anim .. "_ak_drum"
 end
 
 att.Hook_TranslateAnimation = function(wep, anim)
@@ -270,6 +289,10 @@ att.Hook_GetDistantShootSoundIndoors = function(wep, distancesound)
     end
 end
 
+att.Hook_SelectReloadAnimation = function(wep, anim)
+    return anim .. "_556"
+end
+
 att.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_556"
 end
@@ -300,6 +323,10 @@ att.HideIfBlocked = true
 att.Override_ClipSize = 10
 
 att.ActivateElements = {"conv_ssr"}
+
+att.Hook_SelectReloadAnimation = function(wep, anim)
+    return anim .. "_ssr"
+end
 
 att.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_ssr"
