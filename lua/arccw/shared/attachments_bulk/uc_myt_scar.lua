@@ -28,7 +28,7 @@ att.Override_ClipSize = 40  -- bof?
 
 att.Mult_Range = 0.4
 att.Mult_ShootSpeedMult = 1.1
-att.Mult_Recoil = 0.5
+att.Mult_Recoil = 0.3
 att.Mult_HipDispersion = 0.85
 
 att.Mult_SightTime = 0.9
