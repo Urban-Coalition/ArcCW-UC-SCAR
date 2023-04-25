@@ -9,7 +9,7 @@ att.PrintName = "SCAR-9 40-Round 9x19mm Mag"
 att.AbbrevName = "40-Round 9mm Mag"
 
 att.Icon = Material("entities/att/ue_scar/l_9mm.png", "smooth mips")
-att.Description = "Evil magazine adaptor. Takes anything that goes in to a Glock, even Vector mags."
+att.Description = "Evil magazine adaptor. Takes anything that goes in to a Glock, especially Vector mags."
 att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
@@ -349,7 +349,7 @@ local att = {}
 
 att.PrintName = "Marksman Stock"
 att.Icon = Material("entities/att/ue_scar/s_ssr.png", "smooth mips")
-att.Description = [[Heavy-duty and cumbersome marksman stock. Advised to use with according marksman build]]
+att.Description = [[Heavy-duty and cumbersome marksman stock. Advised to use with according marksman build.]]
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -431,7 +431,7 @@ if GetConVar("arccw_truenames"):GetBool() then
     att.PrintName = "MK16 Stock"
 end
 att.Icon = Material("entities/att/ue_scar/s_mk16.png", "smooth mips")
-att.Description = "Collapsable stock that shortens the rifle when collapsed while still retaining a proper cheek weld.\n\nToggling the stock modifies performance accordingly."
+att.Description = "Collapsable stock what shortens the rifle when collapsed while still retaining a proper cheek weld.\n\nToggling the stock modifies performance accordingly."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -586,7 +586,7 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_20")
 local att = {}
 
 att.PrintName = "10\" CQC Barrel"
-att.Icon = Material("entities/att/ue_scar/u_s.png", "smooth mips")
+att.Icon = Material("entities/att/ue_scar/u_xs.png", "smooth mips")
 att.Description = "Carbine length handguard and barrel package."
 att.Desc_Pros = {
 }
@@ -607,7 +607,7 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_s")
 local att = {}
 
 att.PrintName = "6.5\" PDW Barrel"
-att.Icon = Material("entities/att/ue_scar/u_xs.png", "smooth mips")
+att.Icon = Material("entities/att/ue_scar/u_s.png", "smooth mips")
 att.Description = "Shoot your finger off with this one trick."
 att.Desc_Pros = {
 }
