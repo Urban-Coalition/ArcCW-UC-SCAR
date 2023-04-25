@@ -91,7 +91,7 @@ att.PrintName = "SCAR-47 30-Round 7.62x39mm Mag"
 att.AbbrevName = "30-Round 7.62 Mag"
 
 att.Icon = Material("entities/att/ue_scar/l_762.png", "smooth mips")
-att.Description = "Multi-Calibre configuration adapted for scavenging in Eastern Europe. Conversion retains more stopping power relative to .308 than the more common SCAR-L."
+att.Description = "Multi-Calibre configuration adapted for scavenging in Eastern Europe. Conversion retains more stopping power relative to .308 than the more common SCAR-L at the cost of unreliablity."
 att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
@@ -161,7 +161,7 @@ att.PrintName = "SCAR-47 70-Round 7.62x39mm Mag"
 att.AbbrevName = "70-Round 7.62 Mag"
 
 att.Icon = Material("entities/att/ue_scar/l_hamr.png", "smooth mips")
-att.Description = "You are not getting a proper HAMR."
+att.Description = "You are not getting a proper HAMR. Bulky contraption is more prone to jamming"
 att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}

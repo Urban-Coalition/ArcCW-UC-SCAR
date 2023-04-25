@@ -1280,7 +1280,7 @@ SWEP.Attachments = {
         InstalledEles = {"stock_tube"},
         Bone = "W_Main",
         Offset = {
-            vpos = Vector(0, -2.15, -7),
+            vpos = Vector(0, -2.15, -7.5),
             vang = Angle(90, 0, -90),
         },
     },
