@@ -28,10 +28,14 @@ SWEP.TrueName = "SCAR-H"
 -- Trivia --
 
 SWEP.Trivia_Class = "Battle Rifle"
-SWEP.Trivia_Desc = [[The Special Operations Forces Combat Assault Rifle, a highly modular rifle platform designed to specifications of the United States' SOCOM division. Configurable for close combat, marksmanship, and more.]]
+SWEP.Trivia_Desc = [[
+A highly modular rifle platform designed to be used in expeditionary forces. Configurable for urban combat, marksmanship, and more.
+
+This alteration is permanently half baked in sun light.
+]]
 SWEP.Trivia_Calibre = "7.62x51mm NATO"
 SWEP.Trivia_Country = "Wallonia" -- massive funny
-SWEP.Trivia_Manufacturer = "Fabriek Héristal van Hoog-Zert"  -- /Haut-Sart/ why are they speaking fake Dutch with French grammar?
+SWEP.Trivia_Manufacturer = "Héristal van Hoog-Zert"  -- /Haut-Sart/ why are they speaking fake Dutch with French grammar?
 SWEP.Trivia_Year = 2004
 
 -- Weapon slot --
@@ -333,6 +337,7 @@ SWEP.AttachmentElements = {
             [3] = { vpos = Vector(0, -1.65, 15.5) },
             [4] = { vpos = Vector(0, 0, 9) },
             [5] = { vpos = Vector(-1.5, -1.7, 9.5) },
+			[14] = { vpos = Vector(0, -1, 6) },
         },
     },
     ["hg_s"] = {
@@ -1184,13 +1189,13 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Underbarrel",
-        Slot = {"foregrip","ubgl"},
+        Slot = {"foregrip"},
         Bone = "W_Main",
         Offset = {
             vpos = Vector(0, -0.75, 9),
             vang = Angle(90, 0, -90),
         },
-        ExcludeFlags = {"blast"},
+        MergeSlots = {14},
     },
     {
         PrintName = "Tactical",
@@ -1248,5 +1253,16 @@ SWEP.Attachments = {
             vpos = Vector(0.8, -1.9, 2.5),
             vang = Angle(90, 0, -90),
         },
-    },
+	},
+    {
+        PrintName = "M203 slot",
+        Slot = "uc_ubgl",
+        Bone = "W_Main",
+        Offset = {
+            vpos = Vector(0, -1.75, 6), -- this is also changed by ModifyBodygroups
+            vang = Angle(90, 0, -90),
+        },
+        Hidden = true,
+        InstalledEles = {"mount_underbarrel"},
+	},
 }

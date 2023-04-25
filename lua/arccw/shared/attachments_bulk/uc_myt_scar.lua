@@ -627,7 +627,7 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_xs")
 local att = {}
 
 att.PrintName = "16\" Whisper Barrel"
-att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
+att.Icon = Material("entities/att/ue_scar/u_sd.png", "smooth mips")
 att.Description = "Mytton, youre susposed to stop digging up dead ideas"
 att.Desc_Pros = {
 }
