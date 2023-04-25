@@ -297,11 +297,12 @@ SWEP.AttachmentElements = {
             {ind = 7, bg = 6},
         },
     },
+	["stock_tube"] = { VMBodygroups = { {ind = 0, bg = 2},{ind = 7, bg = 10}, }, },
 	["stock_folded"] = { VMBodygroups = { {ind = 7, bg = 1}, }, },
 	["stock_pdw"] = { VMBodygroups = { {ind = 7, bg = 4}, }, },
 	["stock_pdwf"] = { VMBodygroups = { {ind = 7, bg = 5}, }, },
-	["stock_231_ex"] = { VMBodygroups = { {ind = 7, bg = 7}, {ind = 3, bg = 1}, }, },
-	["stock_231_in"] = { VMBodygroups = { {ind = 7, bg = 8}, {ind = 3, bg = 1}, }, },
+	["stock_231_ex"] = { VMBodygroups = { {ind = 7, bg = 7}, {ind = 0, bg = 2}, }, },
+	["stock_231_in"] = { VMBodygroups = { {ind = 7, bg = 8}, {ind = 0, bg = 2}, }, },
 	["stock_fold"] = { VMBodygroups = { {ind = 7, bg = 2}, }, },
 	["stock_foldf"] = { VMBodygroups = { {ind = 7, bg = 3}, }, },
 
@@ -1218,6 +1219,7 @@ SWEP.Attachments = {
         PrintName = "Stock",
         Slot = {"uc_myt_scar_stock"},
         DefaultAttName = "Standard Stock",
+        MergeSlots = {15},
     },
     {
         PrintName = "Magazine",
@@ -1265,4 +1267,16 @@ SWEP.Attachments = {
         Hidden = true,
         InstalledEles = {"mount_underbarrel"},
 	},
+    {
+        PrintName = "Tube Stock Adaptor",
+        Slot = {"go_stock"},
+        -- GSO support
+        Hidden = true,
+        InstalledEles = {"stock_tube"},
+        Bone = "W_Main",
+        Offset = {
+            vpos = Vector(0, -2.15, -7),
+            vang = Angle(90, 0, -90),
+        },
+    },
 }
