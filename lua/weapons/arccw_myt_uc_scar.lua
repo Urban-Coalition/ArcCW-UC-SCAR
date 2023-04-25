@@ -1206,6 +1206,7 @@ SWEP.Attachments = {
     {
         PrintName = "Grip Type",
         Slot = {"uc_myt_scar_grip"},
+		Hidden = true,
         DefaultAttName = "Standard Grip",
     },
     {

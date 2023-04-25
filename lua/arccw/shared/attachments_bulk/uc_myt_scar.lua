@@ -8,7 +8,7 @@ local att = {}
 att.PrintName = "SCAR-9 40-Round 9x19mm Mag"
 att.AbbrevName = "40-Round 9mm Mag"
 
-att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
+att.Icon = Material("entities/att/ue_scar/l_9mm.png", "smooth mips")
 att.Description = "Evil magazine adaptor. Takes anything that goes in to a Glock, even Vector mags."
 att.Desc_Pros = {}
 att.Desc_Cons = {}
@@ -90,8 +90,8 @@ local att = {}
 att.PrintName = "SCAR-47 30-Round 7.62x39mm Mag"
 att.AbbrevName = "30-Round 7.62 Mag"
 
-att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
-att.Description = "Multi-Calibre configuration specifically adapted for scavenging in Eastern Europe. Conversion retains more stopping power relative to .308 than the more common SCAR-L."
+att.Icon = Material("entities/att/ue_scar/l_762.png", "smooth mips")
+att.Description = "Multi-Calibre configuration adapted for scavenging in Eastern Europe. Conversion retains more stopping power relative to .308 than the more common SCAR-L."
 att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
@@ -156,8 +156,8 @@ local att = {}
 att.PrintName = "SCAR-47 70-Round 7.62x39mm Mag"
 att.AbbrevName = "70-Round 7.62 Mag"
 
-att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
-att.Description = "You are not getting a HAMR."
+att.Icon = Material("entities/att/ue_scar/l_hamr.png", "smooth mips")
+att.Description = "You are not getting a proper HAMR."
 att.Desc_Pros = {}
 att.Desc_Cons = {}
 att.Desc_Neutrals = {}
@@ -223,7 +223,7 @@ local att = {}
 att.PrintName = "SCAR-L 30-Round STANAG Mag"
 att.AbbrevName = "30-Round 5.56 Mag"
 
-att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
+att.Icon = Material("entities/att/ue_scar/l_556.png", "smooth mips")
 att.Description = "Barrel and receiver group that accepts an intermediate cartridge, downgrading the weapon into an assault rifle."
 att.Desc_Pros = {}
 att.Desc_Cons = {}
@@ -305,7 +305,7 @@ local att = {}
 att.PrintName = "SCAR-H 10-Round SPP Mag"
 att.AbbrevName = "10-Round .308 Mag"
 
-att.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "smooth mips")
+att.Icon = Material("entities/att/ue_scar/l_308.png", "smooth mips")
 att.Description = "Flush magazine armed with     harder    bullets     what increases    damage    by      making it     sharper?? Text impending."
 att.Desc_Pros = {}
 att.Desc_Cons = {}
@@ -340,7 +340,7 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_cal_ssr")
 local att = {}
 
 att.PrintName = "Marksman Stock"
-att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
+att.Icon = Material("entities/att/ue_scar/s_ssr.png", "smooth mips")
 att.Description = [[Heavy-duty and cumbersome marksman stock. Advised to use with according marksman build]]
 att.Desc_Pros = {
 }
@@ -419,7 +419,10 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_stock_wire")
 local att = {}
 
 att.PrintName = "PDW Stock"
-att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
+if GetConVar("arccw_truenames"):GetBool() then
+    att.PrintName = "MK16 Stock"
+end
+att.Icon = Material("entities/att/ue_scar/s_mk16.png", "smooth mips")
 att.Description = "Collapsable stock that shortens the rifle when collapsed while still retaining a proper cheek weld.\n\nToggling the stock modifies performance accordingly."
 att.Desc_Pros = {
 }
@@ -461,8 +464,8 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_stock_pdw")
 local att = {}
 
 att.PrintName = "Folding Stock"
-att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
-att.Description = "Wrong gun stock. ARM CLIPPING"
+att.Icon = Material("entities/att/ur_ak/stock/fold.png", "smooth mips")
+att.Description = "Wrong gun. Completes with ARM CLIPPING when folded"
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -501,9 +504,9 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_stock_fold")
 
 local att = {}
 
-att.PrintName = "Compact Stock"
+att.PrintName = "Folded Stock"
 
-att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
+att.Icon = Material("entities/att/ue_scar/s_fold.png", "smooth mips")
 att.Description = "Collapse the stock, enhancing the weapon's utility in corps-a-corps environment."
 att.Desc_Pros = {
 }
@@ -533,7 +536,7 @@ local att = {}
 
 -- Barrels ---------------------------------------------------------
 att.PrintName = "20\" LB Barrel"
-att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
+att.Icon = Material("entities/att/ue_scar/u_rail.png", "smooth mips")
 att.Description = "Extended barrel with added railling."
 att.Desc_Pros = {
 }
@@ -554,7 +557,7 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_l")
 local att = {}
 
 att.PrintName = "24\" MKX Barrel"
-att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
+att.Icon = Material("entities/att/ue_scar/u_20.png", "smooth mips")
 att.Description = "Extended barrel with added handguard. Texture scretching galore."
 att.Desc_Pros = {
 }
@@ -575,8 +578,8 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_20")
 local att = {}
 
 att.PrintName = "10\" CQC Barrel"
-att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
-att.Description = "Guh?"
+att.Icon = Material("entities/att/ue_scar/u_s.png", "smooth mips")
+att.Description = "Carbine length handguard and barrel package."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -596,8 +599,8 @@ ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_s")
 local att = {}
 
 att.PrintName = "6.5\" PDW Barrel"
-att.Icon = Material("entities/att/acwatt_ud_m16_stock_608.png", "smooth mips")
-att.Description = "Shoots your finger off with this one trick."
+att.Icon = Material("entities/att/ue_scar/u_xs.png", "smooth mips")
+att.Description = "Shoot your finger off with this one trick."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -610,7 +613,7 @@ att.AutoStats = true
 att.SortOrder = 6.5
 
 att.LHIK = true
-att.Model = "models/weapons/arccw/atts/tactical_lhik.mdl"
+att.Model = "models/weapons/arccw/atts/tactical_lhik.mdl"  --- CHANGE IT CHANGE IT CHANGE IT
 att.DroppedModel = "models/items/boxsrounds.mdl"
 att.ModelOffset = (Vector(0.41, 0, -1.63) - Vector(8, -0.85, -3))
 
