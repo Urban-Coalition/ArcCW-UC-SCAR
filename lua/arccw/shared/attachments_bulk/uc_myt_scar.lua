@@ -109,6 +109,10 @@ att.Mult_Recoil = .7
 att.Mult_Damage = 50 / 65
 att.Mult_DamageMin = 25 / 35
 
+att.Override_Malfunction = true
+att.Mult_MalfunctionMean = 0.7
+att.Mult_MalfunctionVariance = 1.5
+
 att.ActivateElements = {"conv_ak"}
 
 local tail762 = ")/arccw_uc/common/762x39/"
@@ -176,6 +180,10 @@ att.Mult_Damage = 50 / 65
 att.Mult_DamageMin = 25 / 35
 
 att.ActivateElements = {"conv_ak70"}
+
+att.Override_Malfunction = true
+att.Mult_MalfunctionMean = 0.6
+att.Mult_MalfunctionVariance = 1.75
 
 local tail762 = ")/arccw_uc/common/762x39/"
 local fire762dist = {tail762 .. "fire-dist-762x39-rif-ext-01.ogg", tail762 .. "fire-dist-762x39-rif-ext-02.ogg", tail762 .. "fire-dist-762x39-rif-ext-03.ogg", tail762 .. "fire-dist-762x39-rif-ext-04.ogg", tail762 .. "fire-dist-762x39-rif-ext-05.ogg", tail762 .. "fire-dist-762x39-rif-ext-06.ogg"}
