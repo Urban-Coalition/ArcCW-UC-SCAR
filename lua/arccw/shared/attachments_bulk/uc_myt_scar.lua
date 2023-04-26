@@ -187,7 +187,7 @@ att.Mult_MalfunctionMean = 0.6
 att.Mult_MalfunctionVariance = 1.75
 
 att.LHIK = true
-att.LHIK_Priority = -1
+att.LHIK_Priority = -10
 att.Model = "models/weapons/arccw/c_uc_myt_scar_ik_bodge.mdl"
 att.ModelBodygroups = "0"
 att.DroppedModel = "models/items/boxsrounds.mdl"
@@ -437,7 +437,7 @@ if GetConVar("arccw_truenames"):GetBool() then
     att.PrintName = "MK16 Stock"
 end
 att.Icon = Material("entities/att/ue_scar/s_mk16.png", "smooth mips")
-att.Description = "Collapsable stock what shortens the rifle when collapsed while still retaining a proper cheek weld.\n\nToggling the stock modifies performance accordingly."
+att.Description = "Collapsable stock what shortens the rifle when collapsed while still retaining a proper cheek weld.\n\nToggling this stock modifies performance accordingly."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -486,7 +486,7 @@ att.Desc_Cons = {
 }
 att.Desc_Neutrals = {
 }
-att.Ignore = true
+att.Ignore = false
 att.Slot = "uc_myt_scar_stock"
 
 att.AutoStats = true
@@ -564,7 +564,18 @@ att.Slot = "uc_myt_scar_hg"
 att.AutoStats = true
 att.SortOrder = 20
 
+att.Mult_SightTime = 1.15
+att.Mult_SightedSpeedMult = 0.9
+att.Mult_HipDispersion = 1.2
+
+att.Mult_Recoil = 0.8
+att.Mult_AccuracyMOA = 0.75
+att.Mult_Range = 1.5
+att.Mult_RPM = 0.9
+att.Mult_Sway = 1.2
+
 att.Add_BarrelLength = 5
+att.Mult_PhysBulletMuzzleVelocity = 0.8
 
 att.ActivateElements = {"hg_l"}
 ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_l")
@@ -585,7 +596,18 @@ att.Slot = "uc_myt_scar_hg"
 att.AutoStats = true
 att.SortOrder = 24
 
+att.Mult_SightTime = 1.2
+att.Mult_SightedSpeedMult = 0.7
+att.Mult_HipDispersion = 1.25
+
+att.Mult_Recoil = 0.75
+att.Mult_AccuracyMOA = 0.65
+att.Mult_Range = 2
+att.Mult_RPM = 0.875
+att.Mult_Sway = 1.5
+
 att.Add_BarrelLength = 8
+att.Mult_PhysBulletMuzzleVelocity = 1.2
 
 att.ActivateElements = {"hg_20"}
 ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_20")
@@ -607,13 +629,25 @@ att.AutoStats = true
 att.SortOrder = 10
 
 att.LHIK = true
-att.LHIK_Priority = -2
+att.LHIK_Priority = -20
 att.Model = "models/weapons/arccw/c_uc_myt_scar.mdl"
 att.ModelBodygroups = "1460563944"
 att.DroppedModel = "models/items/boxsrounds.mdl"
 att.ModelOffset = (Vector(0.41, 0, -1.63) - Vector(3.5, 0, -3.2))
 
+att.Mult_SightTime = 0.85
+att.Mult_SpeedMult = 1.025
+att.Mult_SightedSpeedMult = 1.1
+att.Mult_HipDispersion = 0.7
+
+att.Mult_RPM = 1.15
+att.Mult_Recoil = 1.5
+att.Mult_AccuracyMOA = 2
+att.Mult_Range = 0.5
+att.Mult_Sway = 0.75
+
 att.Add_BarrelLength = -6
+att.Mult_PhysBulletMuzzleVelocity = 0.729167
 
 att.ActivateElements = {"hg_s", "hg_short"}
 att.ExcludeFlags = {"conv_ak70"}
@@ -636,13 +670,25 @@ att.AutoStats = true
 att.SortOrder = 6.5
 
 att.LHIK = true
-att.LHIK_Priority = -2
+att.LHIK_Priority = -20
 att.Model = "models/weapons/arccw/c_uc_myt_scar.mdl"
 att.ModelBodygroups = "1460563944"
 att.DroppedModel = "models/items/boxsrounds.mdl"
 att.ModelOffset = (Vector(0.41, 0, -1.63) - Vector(5, 0, -3.2))
 
+att.Mult_SightTime = 0.85
+att.Mult_SpeedMult = 1.025
+att.Mult_SightedSpeedMult = 1.1
+att.Mult_HipDispersion = 0.7
+
+att.Mult_RPM = 1.25
+att.Mult_Recoil = 1.75
+att.Mult_AccuracyMOA = 2.5
+att.Mult_Range = 0.35
+att.Mult_Sway = 0.7
+
 att.Add_BarrelLength = -10
+att.Mult_PhysBulletMuzzleVelocity = 0.65
 
 att.ActivateElements = {"hg_xs", "hg_short"}
 att.ExcludeFlags = {"conv_ak70"}
@@ -654,7 +700,7 @@ local att = {}
 
 att.PrintName = "16\" Whisper Barrel"
 att.Icon = Material("entities/att/ue_scar/u_sd.png", "smooth mips")
-att.Description = "Mytton, youre susposed to stop digging up dead ideas"
+att.Description = "Mytton, youre susposed to stop digging up dead horses"
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -667,9 +713,27 @@ att.AutoStats = true
 att.SortOrder = 16
 
 att.Silencer = true
+att.SDBarrel = true
 att.Override_MuzzleEffect = "muzzleflash_suppressed"
 
+att.Mult_SightTime = 1.05
+
+att.Mult_Range = 0.85
+att.Mult_Recoil = 0.95
+att.Mult_AccuracyMOA = 1.15
+att.Mult_HipDispersion = 0.9
+
 att.Add_BarrelLength = 4
+att.Mult_PhysBulletMuzzleVelocity = 1.2
+
+att.Override_Jamming = true
+att.Override_HeatLockout = false
+att.Override_HeatFix = false
+att.Override_HeatCapacity = 90
+att.Override_HeatDelayTime = 2
+att.Override_HeatDissipation = 7.5
+
+att.Mult_ShootVol = 0.65
 
 att.ActivateElements = {"hg_sd"}
 att.GivesFlags = {"sd"}
