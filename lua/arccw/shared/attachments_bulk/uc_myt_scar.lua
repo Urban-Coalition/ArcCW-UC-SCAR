@@ -486,6 +486,7 @@ att.Desc_Cons = {
 }
 att.Desc_Neutrals = {
 }
+att.Ignore = true
 att.Slot = "uc_myt_scar_stock"
 
 att.AutoStats = true
