@@ -180,10 +180,18 @@ att.Mult_Damage = 50 / 65
 att.Mult_DamageMin = 25 / 35
 
 att.ActivateElements = {"conv_ak70"}
+att.ExcludeFlags = {"hg_short"}
 
 att.Override_Malfunction = true
 att.Mult_MalfunctionMean = 0.6
 att.Mult_MalfunctionVariance = 1.75
+
+att.LHIK = true
+att.LHIK_Priority = -1
+att.Model = "models/weapons/arccw/c_uc_myt_scar_ik_bodge.mdl"
+att.ModelBodygroups = "0"
+att.DroppedModel = "models/items/boxsrounds.mdl"
+att.ModelOffset = Vector(-17, -3.5, 5.1)
 
 local tail762 = ")/arccw_uc/common/762x39/"
 local fire762dist = {tail762 .. "fire-dist-762x39-rif-ext-01.ogg", tail762 .. "fire-dist-762x39-rif-ext-02.ogg", tail762 .. "fire-dist-762x39-rif-ext-03.ogg", tail762 .. "fire-dist-762x39-rif-ext-04.ogg", tail762 .. "fire-dist-762x39-rif-ext-05.ogg", tail762 .. "fire-dist-762x39-rif-ext-06.ogg"}
@@ -262,8 +270,6 @@ att.AutoStats = true
 att.HideIfBlocked = true
 
 att.Override_ClipSize = 30
-
-
 
 att.ActivateElements = {"conv_556"}
 
@@ -599,9 +605,17 @@ att.Slot = "uc_myt_scar_hg"
 att.AutoStats = true
 att.SortOrder = 10
 
+att.LHIK = true
+att.LHIK_Priority = -2
+att.Model = "models/weapons/arccw/c_uc_myt_scar.mdl"
+att.ModelBodygroups = "1460563944"
+att.DroppedModel = "models/items/boxsrounds.mdl"
+att.ModelOffset = (Vector(0.41, 0, -1.63) - Vector(3.5, 0, -3.2))
+
 att.Add_BarrelLength = -6
 
-att.ActivateElements = {"hg_s"}
+att.ActivateElements = {"hg_s", "hg_short"}
+att.ExcludeFlags = {"conv_ak70"}
 ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_s")
 
 local att = {}
@@ -621,13 +635,16 @@ att.AutoStats = true
 att.SortOrder = 6.5
 
 att.LHIK = true
-att.Model = "models/weapons/arccw/atts/tactical_lhik.mdl"  --- CHANGE IT CHANGE IT CHANGE IT
+att.LHIK_Priority = -2
+att.Model = "models/weapons/arccw/c_uc_myt_scar.mdl"
+att.ModelBodygroups = "1460563944"
 att.DroppedModel = "models/items/boxsrounds.mdl"
-att.ModelOffset = (Vector(0.41, 0, -1.63) - Vector(8, -0.85, -3))
+att.ModelOffset = (Vector(0.41, 0, -1.63) - Vector(5, 0, -3.2))
 
 att.Add_BarrelLength = -10
 
-att.ActivateElements = {"hg_xs"}
+att.ActivateElements = {"hg_xs", "hg_short"}
+att.ExcludeFlags = {"conv_ak70"}
 ArcCW.LoadAttachmentType(att, "uc_myt_scar_hg_xs")
 
 

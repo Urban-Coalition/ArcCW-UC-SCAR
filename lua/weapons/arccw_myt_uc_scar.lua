@@ -8,9 +8,10 @@ SWEP.UseHands = true
 -- Muzzle and shell effects --
 
 SWEP.MuzzleEffect = "muzzleflash_1"
-SWEP.ShellModel = "models/weapons/arccw/ud_shells/556.mdl"
-SWEP.ShellScale = 1.4
+SWEP.ShellModel = "models/weapons/arccw/uc_shells/556x45.mdl"
+SWEP.ShellScale = 1.145
 SWEP.ShellPitch = 100
+SWEP.UC_ShellColor = Color(0.7*255, 0.2*255, 0.2*255)
 
 SWEP.MuzzleEffectAttachment = 1
 SWEP.CaseEffectAttachment = 2
@@ -389,7 +390,6 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 	if wep.Attachments[3].Installed then vm:SetBodygroup(9, 4) end	
 end
 
-
 SWEP.Hook_Think = ArcCW.UC.ADSReload
 
 SWEP.NoHideLeftHandInCustomization = true
@@ -400,7 +400,6 @@ SWEP.Animations = {
 
     ["ready"] = {
         Source = "deploy",
-        Time = 45 / 30,
         LHIK = true,
         LHIKIn = 0.3,
         LHIKEaseIn = 0.4,
@@ -409,11 +408,26 @@ SWEP.Animations = {
         SoundTable = {
             {s = common .. "raise.ogg", t = 0},
             {s = common .. "rattle.ogg", t = 0.2 + 5/40},
-            {s = path .. "chpull.ogg",   t = 0.15 + 5/40},
+            {s = path .. "chpull.ogg",   t = 18/40},
             {s = common .. "cloth_4.ogg",  t = 0.5 + 5/40},
-            {s = path .. "chrelease.ogg",  t = 0.5 + 5/40},
+            {s = path .. "chrelease.ogg",  t = 32/40},
         },
-        ProcDraw = true,
+        ProcDraw = false,
+    },	
+    ["ready_empty"] = {
+        Source = "deploy_empty",
+        LHIK = true,
+        LHIKIn = 0.3,
+        LHIKEaseIn = 0.4,
+        LHIKEaseOut = 0.15,
+        LHIKOut = 0.4,
+        SoundTable = {
+            {s = common .. "raise.ogg", t = 0},
+            {s = common .. "rattle.ogg", t = 0.2 + 5/40},
+            {s = common .. "cloth_4.ogg",  t = 0.5 + 5/40},
+        },
+        ProcDraw = false,
+        ForceEmpty = true,
     },	
     ["idle_empty"] = {
         Source = "idle_empty",
@@ -1171,6 +1185,7 @@ SWEP.Attachments = {
             vpos = Vector(-0, -3.78, 0.5),
             vang = Angle(90, 0, -90),
         },
+        //MergeSlots = {16},
     },
     {
         PrintName = "Barrel",
@@ -1229,6 +1244,11 @@ SWEP.Attachments = {
     {
         PrintName = "Magazine",
         Slot = {"uc_myt_scar_mag"},
+        Bone = "W_Main",
+        Offset = {
+            vpos = Vector(0, -0.75, 9),
+            vang = Angle(90, 0, -90),
+        },
         DefaultAttName = "20-Round Mag",
     },
     {
@@ -1281,6 +1301,18 @@ SWEP.Attachments = {
         Bone = "W_Main",
         Offset = {
             vpos = Vector(0, -2.15, -7.5),
+            vang = Angle(90, 0, -90),
+        },
+    },
+    {
+        PrintName = "Optic",
+        DefaultAttName = "Iron Sights",
+        Hidden = true,
+        InstalledEles = {"cust_irons"},
+        Slot = {"ud_m16_rs"},
+        Bone = "W_Main",
+        Offset = {
+            vpos = Vector(-0, -3.78, 0.5),
             vang = Angle(90, 0, -90),
         },
     },
