@@ -29,7 +29,7 @@ SWEP.TrueName = "SCAR-H"
 
 SWEP.Trivia_Class = "Battle Rifle"
 SWEP.Trivia_Desc = [[
-A highly modular rifle platform designed to be used in expeditionary forces. Configurable for urban combat, marksmanship, and more.
+A highly modular rifle platform designed to be used by expeditionary forces. Configurable for urban combat, marksmanship, and more.
 
 This alteration is permanently half baked in sun light.
 ]]
