@@ -244,6 +244,12 @@ SWEP.DistantShootSoundIndoorsSilenced = {
     common .. "fire-dist-int-pistol-light-05.ogg",
     common .. "fire-dist-int-pistol-light-06.ogg"
 }
+SWEP.FiremodeSound = {
+    path .. "selector-01.ogg",
+    path .. "selector-02.ogg",
+    path .. "selector-03.ogg",
+    path .. "selector-04.ogg",
+}
 SWEP.DistantShootSoundOutdoorsVolume = 1
 SWEP.DistantShootSoundIndoorsVolume = 1
 SWEP.Hook_AddShootSound = ArcCW.UC.InnyOuty
