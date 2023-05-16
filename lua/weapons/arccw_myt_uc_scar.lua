@@ -60,14 +60,17 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 
 -- Damage --
 
-SWEP.Damage = 65 
+SWEP.Damage = 65
 SWEP.DamageMin = 35
-SWEP.RangeMin = 20
-SWEP.Range = 200
-SWEP.Penetration = 18
+SWEP.RangeMin = 50
+SWEP.Range = 400
+SWEP.Penetration = 20
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil
-SWEP.MuzzleVelocity = 400
+SWEP.MuzzleVelocity = 715
+SWEP.PhysBulletMuzzleVelocity = 715
+
+SWEP.BodyDamageMults = ArcCW.UC.BodyDamageMults
 
 -- Mag size --
 
