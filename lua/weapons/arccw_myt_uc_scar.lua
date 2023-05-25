@@ -60,15 +60,15 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 
 -- Damage --
 
-SWEP.Damage = 65
-SWEP.DamageMin = 35
+SWEP.Damage = ArcCW.UC.StdDmg["762_51"].max
+SWEP.DamageMin = ArcCW.UC.StdDmg["762_51"].min
 SWEP.RangeMin = 50
 SWEP.Range = 400
-SWEP.Penetration = 20
+SWEP.Penetration = ArcCW.UC.StdDmg["762_51"].pen
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil
-SWEP.MuzzleVelocity = 715
-SWEP.PhysBulletMuzzleVelocity = 715
+SWEP.MuzzleVelocity = ArcCW.UC.StdDmg["762_51"].vel
+SWEP.PhysBulletMuzzleVelocity = ArcCW.UC.StdDmg["762_51"].vel
 
 SWEP.BodyDamageMults = ArcCW.UC.BodyDamageMults
 

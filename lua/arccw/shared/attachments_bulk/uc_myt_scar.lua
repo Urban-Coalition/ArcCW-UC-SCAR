@@ -21,9 +21,6 @@ att.Mult_RPM = 1.25 -- 750 rpm
 att.AutoStats = true
 att.HideIfBlocked = true
 
-att.Mult_Damage = 30 / 65
-att.Mult_DamageMin = 17 / 35
-
 att.Override_ClipSize = 40  -- bof?
 
 att.Mult_Range = 0.4
@@ -32,7 +29,12 @@ att.Mult_Recoil = 0.3
 att.Mult_HipDispersion = 0.85
 
 att.Mult_SightTime = 0.9
-att.Mult_Penetration = 6 / 18
+att.Mult_Damage = ArcCW.UC.StdDmg["9mm"].max / ArcCW.UC.StdDmg["762_51"].max
+att.Mult_DamageMin = ArcCW.UC.StdDmg["9mm"].min / ArcCW.UC.StdDmg["762_51"].min
+
+att.Mult_Penetration = ArcCW.UC.StdDmg["9mm"].pen / ArcCW.UC.StdDmg["762_51"].pen
+att.Mult_MuzzleVelocity = ArcCW.UC.StdDmg["9mm"].vel / ArcCW.UC.StdDmg["762_51"].vel
+att.Mult_PhysBulletMuzzleVelocity = ArcCW.UC.StdDmg["9mm"].vel / ArcCW.UC.StdDmg["762_51"].vel
 
 att.ActivateElements = {"conv_9mm"}
 
@@ -106,8 +108,12 @@ att.Override_Trivia_Calibre = "7.62x39mm Soviet"
 att.Override_Trivia_Class = "Assault Rifle"
 
 att.Mult_Recoil = .7
-att.Mult_Damage = 50 / 65
-att.Mult_DamageMin = 25 / 35
+att.Mult_Damage = ArcCW.UC.StdDmg["762_39"].max / ArcCW.UC.StdDmg["762_51"].max
+att.Mult_DamageMin = ArcCW.UC.StdDmg["762_39"].min / ArcCW.UC.StdDmg["762_51"].min
+
+att.Mult_Penetration = ArcCW.UC.StdDmg["762_39"].pen / ArcCW.UC.StdDmg["762_51"].pen
+att.Mult_MuzzleVelocity = ArcCW.UC.StdDmg["762_39"].vel / ArcCW.UC.StdDmg["762_51"].vel
+att.Mult_PhysBulletMuzzleVelocity = ArcCW.UC.StdDmg["762_39"].vel / ArcCW.UC.StdDmg["762_51"].vel
 
 att.Override_Malfunction = true
 att.Mult_MalfunctionMean = 0.7
@@ -176,8 +182,12 @@ att.Override_Trivia_Calibre = "7.62x39mm Soviet"
 att.Override_Trivia_Class = "Assault Rifle"
 
 att.Mult_Recoil = .7
-att.Mult_Damage = 50 / 65
-att.Mult_DamageMin = 25 / 35
+att.Mult_Damage = ArcCW.UC.StdDmg["762_39"].max / ArcCW.UC.StdDmg["762_51"].max
+att.Mult_DamageMin = ArcCW.UC.StdDmg["762_39"].min / ArcCW.UC.StdDmg["762_51"].min
+
+att.Mult_Penetration = ArcCW.UC.StdDmg["762_39"].pen / ArcCW.UC.StdDmg["762_51"].pen
+att.Mult_MuzzleVelocity = ArcCW.UC.StdDmg["762_39"].vel / ArcCW.UC.StdDmg["762_51"].vel
+att.Mult_PhysBulletMuzzleVelocity = ArcCW.UC.StdDmg["762_39"].vel / ArcCW.UC.StdDmg["762_51"].vel
 
 att.ActivateElements = {"conv_ak70"}
 att.ExcludeFlags = {"hg_short"}
@@ -185,6 +195,15 @@ att.ExcludeFlags = {"hg_short"}
 att.Override_Malfunction = true
 att.Mult_MalfunctionMean = 0.6
 att.Mult_MalfunctionVariance = 1.75
+
+att.Mult_SightTime = 1.3
+att.Mult_Sway = 2.5
+att.Mult_SpeedMult = 0.9
+att.Mult_ShootSpeedMult = 0.8
+att.Mult_DrawTime = 1.2
+att.Mult_RecoilSide = 1.5
+att.Mult_HolsterTime = 1.2
+att.Mult_RecoilSide = 1.1
 
 att.LHIK = true
 att.LHIK_Priority = -10
@@ -257,9 +276,12 @@ att.Mult_ReloadTime = .95
 att.Mult_Recoil = 0.45
 att.Mult_HipDispersion = .75
 
-att.Mult_Penetration = 14 / 20
-att.Mult_DamageMin = 20 / 35
-att.Mult_Damage = 34 / 65
+att.Mult_Damage = ArcCW.UC.StdDmg["762_39"].max / ArcCW.UC.StdDmg["762_51"].max
+att.Mult_DamageMin = ArcCW.UC.StdDmg["762_39"].min / ArcCW.UC.StdDmg["762_51"].min
+
+att.Mult_Penetration = ArcCW.UC.StdDmg["762_39"].pen / ArcCW.UC.StdDmg["762_51"].pen
+att.Mult_MuzzleVelocity = ArcCW.UC.StdDmg["762_39"].vel / ArcCW.UC.StdDmg["762_51"].vel
+att.Mult_PhysBulletMuzzleVelocity = ArcCW.UC.StdDmg["762_39"].vel / ArcCW.UC.StdDmg["762_51"].vel
 att.ShootPitchVariation = 1
 att.Override_ShellModel = "models/weapons/arccw/uc_shells/556x45.mdl"
 att.Override_ShellScale = 1
