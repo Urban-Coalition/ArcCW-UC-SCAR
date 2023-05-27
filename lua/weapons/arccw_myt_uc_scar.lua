@@ -1,7 +1,7 @@
 SWEP.Base = "arccw_base"
 SWEP.Spawnable = true
 SWEP.Category = "ArcCW - Urban Coalition"
-SWEP.UC_CategoryPack = "5Urban One-offs"
+SWEP.UC_CategoryPack = "9Urban Expedition"
 SWEP.AdminOnly = false
 SWEP.UseHands = true
 
@@ -1187,7 +1187,7 @@ SWEP.Attachments = {
         PrintName = "Optic",
         DefaultAttName = "Iron Sights",
         --InstalledEles = {"upper_flat"}, no such thing
-        Slot = {"optic","sniper_optic"},
+        Slot = {"optic","optic_sniper"},
         Bone = "W_Main",
         VMScale = Vector(1.15, 1.15, 1.15),
         Offset = {

@@ -106,6 +106,8 @@ att.HideIfBlocked = true
 att.Override_ClipSize = 30
 att.Override_Trivia_Calibre = "7.62x39mm Soviet"
 att.Override_Trivia_Class = "Assault Rifle"
+att.Override_ShellModel = "models/weapons/arccw/uc_shells/762x39.mdl"
+att.Override_ShellScale = 1
 
 att.Mult_Recoil = .7
 att.Mult_Damage = ArcCW.UC.StdDmg["762_39"].max / ArcCW.UC.StdDmg["762_51"].max
@@ -180,6 +182,8 @@ att.HideIfBlocked = true
 att.Override_ClipSize = 70
 att.Override_Trivia_Calibre = "7.62x39mm Soviet"
 att.Override_Trivia_Class = "Assault Rifle"
+att.Override_ShellModel = "models/weapons/arccw/uc_shells/762x39.mdl"
+att.Override_ShellScale = 1
 
 att.Mult_Recoil = .7
 att.Mult_Damage = ArcCW.UC.StdDmg["762_39"].max / ArcCW.UC.StdDmg["762_51"].max
